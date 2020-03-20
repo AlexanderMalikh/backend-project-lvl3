@@ -1,0 +1,41 @@
+{
+  "name": "page-loader",
+  "version": "1.0.0",
+  "description": "hexlet backend lvl 3 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexanderMalikh/backend-project-lvl3.git"
+  },
+  "keywords": [
+    "hexlet",
+    "project",
+    "jest",
+    "axios",
+    "http",
+    "loader"
+  ],
+  "type": [
+	"module"
+  ],
+  "author": "Alexander Malykh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexanderMalikh/backend-project-lvl3/issues"
+  },
+  "homepage": "https://github.com/AlexanderMalikh/backend-project-lvl3#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "jest": "^25.1.0",
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
+    "nock": "^12.0.3",
+  }
+}
