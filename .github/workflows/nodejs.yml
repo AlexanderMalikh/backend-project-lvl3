@@ -29,7 +29,7 @@ jobs:
         # The Node.js version to configure
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, build
+      - name: npm install, publish
         # Install and build project
         run: |
           make install
@@ -39,7 +39,7 @@ jobs:
       - name: Run linter
         # Run Linter
         run: |
-          make lint
+          make test
       - name: Test & publish code coverage
         # Publish code coverage on Code Climate
         # https://github.com/paambaati/codeclimate-action
