@@ -1,11 +1,475 @@
-<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="ru"><head><meta content="&#1055;&#1086;&#1080;&#1089;&#1082; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1080; &#1074; &#1080;&#1085;&#1090;&#1077;&#1088;&#1085;&#1077;&#1090;&#1077;: &#1074;&#1077;&#1073; &#1089;&#1090;&#1088;&#1072;&#1085;&#1080;&#1094;&#1099;, &#1082;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1080;, &#1074;&#1080;&#1076;&#1077;&#1086; &#1080; &#1084;&#1085;&#1086;&#1075;&#1086;&#1077; &#1076;&#1088;&#1091;&#1075;&#1086;&#1077;." name="description"><meta content="noodp" name="robots"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){window.google={kEI:'3692XvKdMM-FrwSAsKXwAQ',kEXPI:'0,1353747,5662,730,224,756,4348,207,3204,10,1051,175,364,926,509,4,60,703,39,75,383,246,5,1010,9,335,373,132,95,173,39,30,74,5,12,105,141,143,5,89,1126350,1197761,263,125,41,329077,1294,12383,4855,32692,15247,867,28684,363,8825,8384,4859,1361,4323,4967,3027,2817,1924,7,3113,7911,3,1807,4998,7931,5297,2054,918,875,1217,9405,11306,2884,20,317,4520,2775,520,399,2277,8,2796,1593,1279,2212,202,328,149,1103,327,513,517,1474,48,820,3438,108,204,1137,2,2063,606,1839,184,1733,43,521,1947,747,429,1053,94,327,1284,16,2927,2246,474,1339,748,1039,3227,773,1217,855,7,1320,4279,2034,6513,2663,641,602,1848,2458,1226,497,965,281,3653,1275,108,594,2813,908,2,1493,542,1520,1412,471,249,265,3224,2195,226,995,830,840,185,2,293,1767,188,3,547,29,157,813,183,388,174,103,17,4,374,88,923,498,125,1906,356,84,266,149,189,1984,1328,2489,28,296,153,380,2,531,588,31,243,120,88,606,731,861,192,921,423,130,335,679,647,4,1141,193,3,191,143,178,110,71,139,2,299,299,1063,154,181,482,141,490,22,37,197,401,276,363,32,2,8,1169,220,184,287,345,91,532,4,165,4,14,601,214,124,5833731,3309,1802585,4194968,2801054,549,333,444,1,2,80,1,900,896,1,8,1,2,2551,1,748,141,59,736,563,1,4265,1,1,1,1,137,1,1193,641,5,76,20,3,1,328,18,80,1,13,1,1,1,22,11,1,1,10,2,4,1,1,1,1,1,23963158,25',kBL:'Q_rD'};google.sn='webhp';google.kHL='ru';})();(function(){google.lc=[];google.li=0;google.getEI=function(a){for(var c;a&&(!a.getAttribute||!(c=a.getAttribute("eid")));)a=a.parentNode;return c||google.kEI};google.getLEI=function(a){for(var c=null;a&&(!a.getAttribute||!(c=a.getAttribute("leid")));)a=a.parentNode;return c};google.ml=function(){return null};google.time=function(){return Date.now()};google.log=function(a,c,b,d,g){if(b=google.logUrl(a,c,b,d,g)){a=new Image;var e=google.lc,f=google.li;e[f]=a;a.onerror=a.onload=a.onabort=function(){delete e[f]};google.vel&&google.vel.lu&&google.vel.lu(b);a.src=b;google.li=f+1}};google.logUrl=function(a,c,b,d,g){var e="",f=google.ls||"";b||-1!=c.search("&ei=")||(e="&ei="+google.getEI(d),-1==c.search("&lei=")&&(d=google.getLEI(d))&&(e+="&lei="+d));d="";!b&&google.cshid&&-1==c.search("&cshid=")&&"slh"!=a&&(d="&cshid="+google.cshid);b=b||"/"+(g||"gen_204")+"?atyp=i&ct="+a+"&cad="+c+e+f+"&zx="+google.time()+d;/^http:/i.test(b)&&"https:"==window.location.protocol&&(google.ml(Error("a"),!1,{src:b,glmm:1}),b="");return b};}).call(this);(function(){google.y={};google.x=function(a,b){if(a)var c=a.id;else{do c=Math.random();while(google.y[c])}google.y[c]=[a,b];return!1};google.lm=[];google.plm=function(a){google.lm.push.apply(google.lm,a)};google.lq=[];google.load=function(a,b,c){google.lq.push([[a],b,c])};google.loadAll=function(a,b){google.lq.push([a,b])};}).call(this);google.f={};(function(){
-document.documentElement.addEventListener("submit",function(b){var a;if(a=b.target){var c=a.getAttribute("data-submitfalse");a="1"==c||"q"==c&&!a.elements.q.value?!0:!1}else a=!1;a&&(b.preventDefault(),b.stopPropagation())},!0);document.documentElement.addEventListener("click",function(b){var a;a:{for(a=b.target;a&&a!=document.documentElement;a=a.parentElement)if("A"==a.tagName){a="1"==a.getAttribute("data-nohref");break a}a=!1}a&&b.preventDefault()},!0);}).call(this);
-var a=window.location,b=a.href.indexOf("#");if(0<=b){var c=a.href.substring(b+1);/(^|&)q=/.test(c)&&-1==c.indexOf("#")&&a.replace("/search?"+c.replace(/(^|&)fp=[^&]*/g,"")+"&cad=h")};</script><style>#gbar,#guser{font-size:13px;padding-top:1px !important;}#gbar{height:22px}#guser{padding-bottom:7px !important;text-align:right}.gbh,.gbd{border-top:1px solid #c9d7f1;font-size:1px}.gbh{height:0;position:absolute;top:24px;width:100%}@media all{.gb1{height:22px;margin-right:.5em;vertical-align:top}#gbar{float:left}}a.gb1,a.gb4{text-decoration:underline !important}a.gb1,a.gb4{color:#00c !important}.gbi .gb4{color:#dd8e27 !important}.gbf .gb4{color:#900 !important}
-</style><style>body,td,a,p,.h{font-family:arial,sans-serif}body{margin:0;overflow-y:scroll}#gog{padding:3px 8px 0}td{line-height:.8em}.gac_m td{line-height:17px}form{margin-bottom:20px}.h{color:#36c}.q{color:#00c}.ts td{padding:0}.ts{border-collapse:collapse}em{font-weight:bold;font-style:normal}.lst{height:25px;width:496px}.gsfi,.lst{font:18px arial,sans-serif}.gsfs{font:17px arial,sans-serif}.ds{display:inline-box;display:inline-block;margin:3px 0 4px;margin-left:4px}input{font-family:inherit}body{background:#fff;color:#000}a{color:#11c;text-decoration:none}a:hover,a:active{text-decoration:underline}.fl a{color:#36c}a:visited{color:#551a8b}.sblc{padding-top:5px}.sblc a{display:block;margin:2px 0;margin-left:13px;font-size:11px}.lsbb{background:#eee;border:solid 1px;border-color:#ccc #999 #999 #ccc;height:30px}.lsbb{display:block}.ftl,#fll a{display:inline-block;margin:0 12px}.lsb{background:url(/images/nav_logo229.png) 0 -261px repeat-x;border:none;color:#000;cursor:pointer;height:30px;margin:0;outline:0;font:15px arial,sans-serif;vertical-align:top}.lsb:active{background:#ccc}.lst:focus{outline:none}.tiah{width:458px}</style><script nonce="WVvRwgB5TxU4/6dxNozYrA=="></script></head><body bgcolor="#fff"><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){var src='/images/nav_logo229.png';var iesg=false;document.body.onload = function(){window.n && window.n();if (document.images){new Image().src=src;}
-if (!iesg){document.f&&document.f.q.focus();document.gbqf&&document.gbqf.q.focus();}
-}
-})();</script><div id="mngb"> <div id=gbar><nobr><b class=gb1>&#1055;&#1086;&#1080;&#1089;&#1082;</b> <a class=gb1 href="https://www.google.ru/imghp?hl=ru&tab=wi">&#1050;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1080;</a> <a class=gb1 href="https://maps.google.ru/maps?hl=ru&tab=wl">&#1050;&#1072;&#1088;&#1090;&#1099;</a> <a class=gb1 href="https://play.google.com/?hl=ru&tab=w8">Play</a> <a class=gb1 href="https://www.youtube.com/?gl=RU&tab=w1">YouTube</a> <a class=gb1 href="https://news.google.ru/nwshp?hl=ru&tab=wn">&#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</a> <a class=gb1 href="https://mail.google.com/mail/?tab=wm">&#1055;&#1086;&#1095;&#1090;&#1072;</a> <a class=gb1 href="https://drive.google.com/?tab=wo">&#1044;&#1080;&#1089;&#1082;</a> <a class=gb1 style="text-decoration:none" href="https://www.google.ru/intl/ru/about/products?tab=wh"><u>&#1045;&#1097;&#1105;</u> &raquo;</a></nobr></div><div id=guser width=100%><nobr><span id=gbn class=gbi></span><span id=gbf class=gbf></span><span id=gbe></span><a href="http://www.google.ru/history/optout?hl=ru" class=gb4>&#1048;&#1089;&#1090;&#1086;&#1088;&#1080;&#1103; &#1074;&#1077;&#1073;-&#1087;&#1086;&#1080;&#1089;&#1082;&#1072;</a> | <a  href="/preferences?hl=ru" class=gb4>&#1053;&#1072;&#1089;&#1090;&#1088;&#1086;&#1081;&#1082;&#1080;</a> | <a target=_top id=gb_70 href="https://accounts.google.com/ServiceLogin?hl=ru&passive=true&continue=https://www.google.com/" class=gb4>&#1042;&#1086;&#1081;&#1090;&#1080;</a></nobr></div><div class=gbh style=left:0></div><div class=gbh style=right:0></div> </div><center><br clear="all" id="lgpd"><div id="lga"><img alt="Google" height="92" src="/images/branding/googlelogo/1x/googlelogo_white_background_color_272x92dp.png" style="padding:28px 0 14px" width="272" id="hplogo"><br><br></div><form action="/search" name="f"><table cellpadding="0" cellspacing="0"><tr valign="top"><td width="25%">&nbsp;</td><td align="center" nowrap=""><input name="ie" value="ISO-8859-1" type="hidden"><input value="ru" name="hl" type="hidden"><input name="source" type="hidden" value="hp"><input name="biw" type="hidden"><input name="bih" type="hidden"><div class="ds" style="height:32px;margin:4px 0"><div style="position:relative;zoom:1"><input class="lst tiah" style="margin:0;padding:5px 8px 0 6px;vertical-align:top;color:#000;padding-right:38px" autocomplete="off" value="" title="&#1055;&#1086;&#1080;&#1089;&#1082; &#1074; Google" maxlength="2048" name="q" size="57"><img src="/textinputassistant/tia.png" style="position:absolute;cursor:pointer;right:5px;top:4px;z-index:300" data-script-url="/textinputassistant/11/ru_tia.js" id="tsuid1" alt="" height="23" width="27"><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){var id='tsuid1';document.getElementById(id).onclick = function(){var s = document.createElement('script');s.src = this.getAttribute('data-script-url');(document.getElementById('xjsc')||document.body).appendChild(s);};})();</script></div></div><br style="line-height:0"><span class="ds"><span class="lsbb"><input class="lsb" value="&#1055;&#1086;&#1080;&#1089;&#1082; &#1074; Google" name="btnG" type="submit"></span></span><span class="ds"><span class="lsbb"><input class="lsb" id="tsuid2" value="&#1052;&#1085;&#1077; &#1087;&#1086;&#1074;&#1077;&#1079;&#1105;&#1090;!" name="btnI" type="submit"><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){var id='tsuid2';document.getElementById(id).onclick = function(){if (this.form.q.value){this.checked = 1;if (this.form.iflsig)this.form.iflsig.disabled = false;}
-else top.location='/doodles/';};})();</script><input value="AINFCbYAAAAAXna971UJC7hgrjPnTNKHk_E0KdWGYd2O" name="iflsig" type="hidden"></span></span></td><td class="fl sblc" align="left" nowrap="" width="25%"><a href="/advanced_search?hl=ru&amp;authuser=0">&#1056;&#1072;&#1089;&#1096;&#1080;&#1088;&#1077;&#1085;&#1085;&#1099;&#1081; &#1087;&#1086;&#1080;&#1089;&#1082;</a></td></tr></table><input id="gbv" name="gbv" type="hidden" value="1"><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){var a,b="1";if(document&&document.getElementById)if("undefined"!=typeof XMLHttpRequest)b="2";else if("undefined"!=typeof ActiveXObject){var c,d,e=["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP","Microsoft.XMLHTTP"];for(c=0;d=e[c++];)try{new ActiveXObject(d),b="2"}catch(h){}}a=b;if("2"==a&&-1==location.search.indexOf("&gbv=2")){var f=google.gbvu,g=document.getElementById("gbv");g&&(g.value=a);f&&window.setTimeout(function(){location.href=f},0)};}).call(this);</script></form><div id="gac_scont"></div><div style="font-size:83%;min-height:3.5em"><br><div id="prm"><style>.szppmdbYutt__middle-slot-promo{font-size:small;margin-bottom:32px}.szppmdbYutt__middle-slot-promo a.ZIeIlb{display:inline-block;text-decoration:none}.szppmdbYutt__middle-slot-promo img{border:none;margin-right:5px;vertical-align:middle}</style><div class="szppmdbYutt__middle-slot-promo" data-ved="0ahUKEwiyiYKp6KzoAhXPwosKHQBYCR4QnIcBCAQ"><a class="NKcBbd" href="https://www.google.com/url?q=https://www.google.ru/search%3Fhl%3Dru%26q%3D%25D0%25BA%25D0%25BE%25D1%2580%25D0%25BE%25D0%25BD%25D0%25B0%25D0%25B2%25D0%25B8%25D1%2580%25D1%2583%25D1%2581&amp;source=hpp&amp;id=19016859&amp;ct=3&amp;usg=AFQjCNHPiUw5_LkJxQ9QOoce_GAKtVDXBA&amp;sa=X&amp;ved=0ahUKEwiyiYKp6KzoAhXPwosKHQBYCR4Q8IcBCAU" rel="nofollow">&#1050;&#1086;&#1088;&#1086;&#1085;&#1072;&#1074;&#1080;&#1088;&#1091;&#1089;: &#1072;&#1082;&#1090;&#1091;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; &#1080;&#1085;&#1092;&#1086;&#1088;&#1084;&#1072;&#1094;&#1080;&#1103;</a></div></div></div><span id="footer"><div style="font-size:10pt"><div style="margin:19px auto;text-align:center" id="fll"><a href="/intl/ru/ads/">&#1056;&#1077;&#1082;&#1083;&#1072;&#1084;&#1085;&#1099;&#1077; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1084;&#1099;</a><a href="http://www.google.ru/intl/ru/services/">&#1056;&#1077;&#1096;&#1077;&#1085;&#1080;&#1103; &#1076;&#1083;&#1103; &#1073;&#1080;&#1079;&#1085;&#1077;&#1089;&#1072;</a><a href="/intl/ru/about.html">&#1042;&#1089;&#1105; &#1086; Google</a><a href="https://www.google.com/setprefdomain?prefdom=RU&amp;prev=https://www.google.ru/&amp;sig=K_rFJC0g8AO_DINt4mksZzUd917jU%3D">Google.ru</a></div></div><p style="font-size:8pt;color:#767676">&copy; 2020 - <a href="/intl/ru/policies/privacy/">&#1050;&#1086;&#1085;&#1092;&#1080;&#1076;&#1077;&#1085;&#1094;&#1080;&#1072;&#1083;&#1100;&#1085;&#1086;&#1089;&#1090;&#1100;</a> - <a href="/intl/ru/policies/terms/">&#1059;&#1089;&#1083;&#1086;&#1074;&#1080;&#1103;</a></p></span></center><script nonce="WVvRwgB5TxU4/6dxNozYrA==">(function(){window.google.cdo={height:0,width:0};(function(){var a=window.innerWidth,b=window.innerHeight;if(!a||!b){var c=window.document,d="CSS1Compat"==c.compatMode?c.documentElement:c.body;a=d.clientWidth;b=d.clientHeight}a&&b&&(a!=google.cdo.width||b!=google.cdo.height)&&google.log("","","/client_204?&atyp=i&biw="+a+"&bih="+b+"&ei="+google.kEI);}).call(this);})();(function(){var u='/xjs/_/js/k\x3dxjs.hp.en.elWNpsf9c8Y.O/m\x3dsb_he,d/am\x3dgAEBNgI/d\x3d1/rs\x3dACT90oGDJt0z4CABgoD1-FV-N84Z03g9Lg';
-setTimeout(function(){var b=document;var a="SCRIPT";"application/xhtml+xml"===b.contentType&&(a=a.toLowerCase());a=b.createElement(a);a.src=u;google.timers&&google.timers.load&&google.tick&&google.tick("load","xjsls");document.body.appendChild(a)},0);})();(function(){window.google.xjsu='/xjs/_/js/k\x3dxjs.hp.en.elWNpsf9c8Y.O/m\x3dsb_he,d/am\x3dgAEBNgI/d\x3d1/rs\x3dACT90oGDJt0z4CABgoD1-FV-N84Z03g9Lg';})();function _DumpException(e){throw e;}
-function _F_installCss(c){}
-(function(){google.spjs=false;google.snet=true;google.em=[];google.emw=false;google.pdt=0;})();(function(){var pmc='{\x22d\x22:{},\x22sb_he\x22:{\x22agen\x22:true,\x22cgen\x22:true,\x22client\x22:\x22heirloom-hp\x22,\x22dh\x22:true,\x22dhqt\x22:true,\x22ds\x22:\x22\x22,\x22ffql\x22:\x22ru\x22,\x22fl\x22:true,\x22host\x22:\x22google.com\x22,\x22isbh\x22:28,\x22jsonp\x22:true,\x22msgs\x22:{\x22cibl\x22:\x22&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100; &#1087;&#1086;&#1080;&#1089;&#1082;&#1086;&#1074;&#1099;&#1081; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;\x22,\x22dym\x22:\x22&#1042;&#1086;&#1079;&#1084;&#1086;&#1078;&#1085;&#1086;, &#1074;&#1099; &#1080;&#1084;&#1077;&#1083;&#1080; &#1074; &#1074;&#1080;&#1076;&#1091;:\x22,\x22lcky\x22:\x22&#1052;&#1085;&#1077; &#1087;&#1086;&#1074;&#1077;&#1079;&#1105;&#1090;!\x22,\x22lml\x22:\x22&#1055;&#1086;&#1076;&#1088;&#1086;&#1073;&#1085;&#1077;&#1077;...\x22,\x22oskt\x22:\x22&#1069;&#1082;&#1088;&#1072;&#1085;&#1085;&#1072;&#1103; &#1082;&#1083;&#1072;&#1074;&#1080;&#1072;&#1090;&#1091;&#1088;&#1072;\x22,\x22psrc\x22:\x22&#1069;&#1090;&#1086;&#1090; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089; &#1073;&#1099;&#1083; &#1091;&#1076;&#1072;&#1083;&#1077;&#1085; &#1080;&#1079; &#1074;&#1072;&#1096;&#1077;&#1081; \\u003Ca href\x3d\\\x22/history\\\x22\\u003E&#1080;&#1089;&#1090;&#1086;&#1088;&#1080;&#1080; &#1074;&#1077;&#1073;-&#1087;&#1086;&#1080;&#1089;&#1082;&#1072;\\u003C/a\\u003E\x22,\x22psrl\x22:\x22&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;\x22,\x22sbit\x22:\x22&#1055;&#1086;&#1080;&#1089;&#1082; &#1087;&#1086; &#1082;&#1072;&#1088;&#1090;&#1080;&#1085;&#1082;&#1077;\x22,\x22srch\x22:\x22&#1055;&#1086;&#1080;&#1089;&#1082; &#1074; Google\x22},\x22ovr\x22:{},\x22pq\x22:\x22\x22,\x22refpd\x22:true,\x22rfs\x22:[],\x22sbpl\x22:16,\x22sbpr\x22:16,\x22scd\x22:10,\x22stok\x22:\x22gbdvGRZnzwHzln46X3fb4HUhfo8\x22,\x22uhde\x22:false}}';google.pmc=JSON.parse(pmc);})();</script>        </body></html>
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+<title>Мой прогресс</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="lp3bcQ5GNtYj3f683svC0JipELCrTOkALKrk7QfPXv+OjAbTNydX0gJ3jWie0JJpVSUl/Yat1JM0THiAmgYKlQ==" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'>
+<meta charset='utf-8'>
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["Script error"],"payload":{"client":{"source_map_enabled":true,"code_version":"v4206","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.12.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){var n=o(2);function t(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var a=0;function l(r,e){this.options=r,this._rollbarOldOnError=null;var o=a++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var i=o(3),s=function(r,e){return new l(r,e)},d=function(r){return new i(s,r)};function c(r){return t(function(){var e=Array.prototype.slice.call(arguments,0),o={shim:this,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(o)})}l.prototype.loadFull=function(r,e,o,n,a){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=t(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if("function"==typeof(l=t[i])){l(e);break}}"function"==typeof a&&a(e)}()}}),d.insertBefore(i,s)},l.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),u=0;u<p.length;++u)l.prototype[p[u]]=c(p[u]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var a=new d(e);return t(function(){e.captureUncaught&&(a._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,a,!0),e.wrapGlobalEventHandlers&&n.wrapGlobals(r,a,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,a,!0);var t=e.autoInstrument;return!1!==e.enabled&&(void 0===t||!0===t||"object"==typeof t&&t.network)&&r.addEventListener&&(r.addEventListener("load",a.captureLoad.bind(a)),r.addEventListener("DOMContentLoaded",a.captureDomContentLoaded.bind(a))),r[o]=a,a})()}},Rollbar:d}},function(r,e){function o(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var n;if("function"==typeof e._rollbarOldOnError)n=e._rollbarOldOnError;else if(r.onerror){for(n=r.onerror;n._rollbarOldOnError;)n=n._rollbarOldOnError;e._rollbarOldOnError=n}e.handleAnonymousErrors();var t=function(){var o=Array.prototype.slice.call(arguments,0);!function(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}(r,e,n,o)};o&&(t._rollbarOldOnError=n),r.onerror=t}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}},wrapGlobals:function(r,e,n){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&o(e,r[a].prototype,n)}}}},function(r,e){function o(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(o.prototype)}o.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/assets/application-0252c0b2685b4354bce48031f340d2646bba8b00162aea235d7166e6c5a97daa.css" />
+<link rel="stylesheet" media="screen" href="https://cdn2.hexlet.io/packs/css/41-09f8871c.chunk.css" />
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">
+//<![CDATA[
+window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_user={"id":null,"guest":true,"isGuest":true,"admin":false};gon.token="iXAL7Kg8NHK1DFCAIZrR19pJb7H1K8Ey7Spcog4G8m+RYdZOkV1VdpSmI1RhgYFuF8Va/NjK/KH1zMDPk8+mBQ==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=null;gon.subdomains=["en.hexlet.io","ru.hexlet.io"];
+//]]>
+</script>
+<script type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Puolikkotie 8, 02230 Espoo, Finland","vatID":"VAT ID: FI26641607","telephone":"+44 20 3514 2938","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png"}}
+
+</script>
+
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-1360700-51" async="async" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  
+  var config = {
+    'optimize_id': gon.google.optimize_key
+  };
+  
+  if (!gon.current_user.isGuest) {
+    config['user_id'] = gon.current_user.id;
+  }
+  
+  if (gon.social_signin) {
+    config['page_referrer'] = window.location.origin;
+  }
+  
+  gtag('config', gon.google.analytics_key, config);
+</script>
+
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script type="e6a8f538d3a29ac38be0bddc-text/javascript">
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    }
+  });
+</script>
+
+<meta content='b9d3902d34' name='verify-admitad'>
+
+
+<link href='https://ru.hexlet.io/my' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Здесь будет виден ваш прогресс обучения от новичка до проектов и стажировки.' name='description'>
+<meta content='Мой прогресс' property='og:title'>
+<meta content='https://ru.hexlet.io/my' property='og:url'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='Здесь будет виден ваш прогресс обучения от новичка до проектов и стажировки.' property='og:description'>
+<meta content='ru' property='og:locale'>
+<meta content='Хекслет' property='og:site_name'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/pricing"><div class="my-2">Цены</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/blog"><div class="my-2">Блог</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+<div class='text-center py-3'>
+<div class='h2 text-warning'>Основные возможности платформы Hexlet не доступны в вашем браузере.<br>
+Пожалуйста, обновитесь. <a href="https://bestvpn.org/outdatedbrowser/ru">Выбрать браузер</a>.
+</div>
+</div>
+
+
+<div class='mb-n5'>
+<div class='row no-gutters'>
+<div class='col-sm-auto border-right hexlet-application-sidebar'>
+<ul class='nav flex-column position-sticky mb-3 sticky-top'>
+<li class='nav-item w-100'>
+<a class="nav-link hexlet-nav-item-hover text-truncate py-3" href="/session/new"><img class="mr-1 rounded-circle" width="30" height="30" alt="Аватар пользователя Гость" src="https://cdn2.hexlet.io/assets/team/you-0d6975dd3165f8174f242a784f3beb84835b60d93e446821299ac562e4cff9c3.jpg" />
+<small class='text-muted'>Гость</small>
+</a><div class='mx-4 border-bottom'></div>
+</li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover font-weight-bold text-primary" href="/my"><div class="x-icon-default-size"><i class="fal fa-graduation-cap"></i></div><div class="ml-2 w-100">Обучение</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/topics"><div class="x-icon-default-size"><i class="fal fa-comments"></i></div><div class="ml-2 w-100">Вопросы и ответы</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/blog_posts"><div class="x-icon-default-size"><i class="fal fa-blog"></i></div><div class="ml-2 w-100">Дневник студента</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/ratings/week"><div class="x-icon-default-size"><i class="fal fa-trophy-alt"></i></div><div class="ml-2 w-100">Рейтинг</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/career"><div class="x-icon-default-size"><i class="fal fa-rocket"></i></div><div class="ml-2 w-100">Карьера</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/bonuses"><div class="x-icon-default-size"><i class="fal fa-gift"></i></div><div class="ml-2 w-100">Бонусы</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/companies/new"><div class="x-icon-default-size"><i class="fal fa-building"></i></div><div class="ml-2 w-100">Компания</div></a></li>
+</ul>
+</div>
+<div class='col-sm overflow-hidden'>
+<div class='my-4'>
+<div class='container mb-5'>
+<div class='row'>
+<div class='col-md-9 mx-auto'>
+<ul class='nav nav-pills nav-fill'>
+<li class="nav-item"><a class="nav-link px-3 active" href="/my">Сейчас</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/courses">Мои курсы</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/challenges">Мои испытания</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/projects">Проекты</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/exercises_code_reviews">Ревью кода</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class='container'>
+<div class='mb-5'>
+<h2 class='h4'>С чего начать</h2>
+<p>Начните с профессии и двигайтесь по курсам в правильном порядке, либо воспользуйтесь поиском по курсам.</p>
+<div class='row justify-content-center'>
+<div class='col-md-5 mt-3'>
+<div class='card border-top border-primary border-success shadow-sm x-shadow-fade-in h-100'>
+<div class='card-body'>
+<div class='card-title d-flex'>
+<div class='lead mt-auto'>
+<a class="stretched-link x-link-without-decoration" href="/professions">Выберите профессию</a>
+</div>
+<span class='ml-auto'>
+<i class='fal fa-compass fa-2x text-muted'></i>
+</span>
+</div>
+<div class='card-text'>Сформируйте свой персональный план обучения. Оцените готовность к выполнению проектов.
+</div>
+</div>
+</div>
+</div>
+<div class='col-md-5 mt-3'>
+<div class='card border-top border-success shadow-sm x-shadow-fade-in h-100'>
+<div class='card-body'>
+<div class='card-title d-flex'>
+<div class='lead mt-auto'>
+<a class="stretched-link x-link-without-decoration" href="/courses/introduction_to_programming">Пройдите курс</a>
+</div>
+<span class='ml-auto'>
+<i class='fal fa-chalkboard fa-2x text-muted'></i>
+</span>
+</div>
+<div class='card-text'>Не знаете с чего начать? Попробуйте наш курс &quot;Введение в программирование&quot;. Оцените свой текущий уровень.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='mb-5'>
+<h2 class='h4'>Популярные курсы</h2>
+<div class='row'>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-js fab'></i>
+<div class='ml-auto my-auto'>
+45 часов
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>Введение в программирование</h5>
+</div>
+<div class='text-muted mb-2'>Что такое компьютер на самом деле? Понимает ли он языки програ...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/introduction_to_programming">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-code fal'></i>
+<div class='ml-auto my-auto'>
+6 часов
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>Операционные системы</h5>
+</div>
+<div class='text-muted mb-2'>Курс посвящен главным принципам, лежащим в основе дизайна опер...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/operating_systems">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-php fab'></i>
+<div class='ml-auto my-auto'>
+5 часов
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>PHP: Настройка окружения</h5>
+</div>
+<div class='text-muted mb-2'>В этом курсе рассматривается понятие языка программирования, о...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/php-setup-environment">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class='mb-5'>
+<h2 class='h4'>Сообщества Хекслета</h2>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-slack fa-2x text-primary'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Слак</h2>
+<p class='text-muted'>Чат студентов Хекслета. Обсуждение программирования, помощь, обучение.</p>
+<div class='mt-auto'><a target="_blank" href="https://slack-ru.hexlet.io/">Присоединиться</a></div>
+</div>
+</div>
+</div>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-vk fa-2x text-success'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Группа Вконтакте</h2>
+<p class='text-muted'>Новости из мира разработки, мероприятия Хекслета, полезные статьи.</p>
+<div class='mt-auto'><a target="_blank" href="https://vk.com/hexlet">Почитать</a></div>
+</div>
+</div>
+</div>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-youtube fa-2x text-danger'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Ютуб Канал</h2>
+<p class='text-muted'>Вебинары, обучающие видео, обсуждение насущных вопросов, интервью с известными людьми.</p>
+<div class='mt-auto'><a target="_blank" href="https://www.youtube.com/user/HexletUniversity">Посмотреть</a></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<footer class='bg-light border-top py-4 mt-5'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-md-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a id="VK95731912" target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>Puolikkotie 8, 02230 Espoo, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(499)609-12-31">+7 (499) 609-12-31</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/projects">Проекты по JavaScript, PHP, Node.js, Python, HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-md-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io/?utm_source=hexlet&amp;utm_medium=footer_menu&amp;utm_campaign=link">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="/cdn-cgi/l/email-protection#b5c6c0c5c5dac7c1f5ddd0cdd9d0c19bdcda">Поддержка</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn2.hexlet.io/assets/application-af77351a6b42df389c3b48e13a5a8ef539b796d10d2f8b013cdba320b326f8fc.js" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime~application-8d2b76ae2d935f174ec1.js" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/2-c5499053569d82bf892b.chunk.js" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/41-0a129c070d6d9bc591a1.chunk.js" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-8fba1ca8b6333cc73d1e.chunk.js" type="e6a8f538d3a29ac38be0bddc-text/javascript"></script>
+
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="e6a8f538d3a29ac38be0bddc-|49" defer=""></script></body>
+</html>

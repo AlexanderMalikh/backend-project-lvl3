@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Регулярные выражения - Курсы по программированию</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="1gFNZ9Z90dnMD3vM27C5gyWB5ifCJnUfwAAjjuGDFKyx4rXoKH0oYJd3lDc3X/919PhR3zTqgjVdeNNeovM6Vg==" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'>
+<meta charset='utf-8'>
+<script type="82af1b67443a8e45d3850ad7-text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["Script error"],"payload":{"client":{"source_map_enabled":true,"code_version":"v4206","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="82af1b67443a8e45d3850ad7-text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdnjs.cloudflare.com/ajax/libs/rollbar.js/2.12.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){var n=o(2);function t(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var a=0;function l(r,e){this.options=r,this._rollbarOldOnError=null;var o=a++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var i=o(3),s=function(r,e){return new l(r,e)},d=function(r){return new i(s,r)};function c(r){return t(function(){var e=Array.prototype.slice.call(arguments,0),o={shim:this,method:r,args:e,ts:new Date};window._rollbarShims[this.shimId()].messages.push(o)})}l.prototype.loadFull=function(r,e,o,n,a){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=t(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if("function"==typeof(l=t[i])){l(e);break}}"function"==typeof a&&a(e)}()}}),d.insertBefore(i,s)},l.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),u=0;u<p.length;++u)l.prototype[p[u]]=c(p[u]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var a=new d(e);return t(function(){e.captureUncaught&&(a._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,a,!0),e.wrapGlobalEventHandlers&&n.wrapGlobals(r,a,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,a,!0);var t=e.autoInstrument;return!1!==e.enabled&&(void 0===t||!0===t||"object"==typeof t&&t.network)&&r.addEventListener&&(r.addEventListener("load",a.captureLoad.bind(a)),r.addEventListener("DOMContentLoaded",a.captureDomContentLoaded.bind(a))),r[o]=a,a})()}},Rollbar:d}},function(r,e){function o(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var n;if("function"==typeof e._rollbarOldOnError)n=e._rollbarOldOnError;else if(r.onerror){for(n=r.onerror;n._rollbarOldOnError;)n=n._rollbarOldOnError;e._rollbarOldOnError=n}e.handleAnonymousErrors();var t=function(){var o=Array.prototype.slice.call(arguments,0);!function(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}(r,e,n,o)};o&&(t._rollbarOldOnError=n),r.onerror=t}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}},wrapGlobals:function(r,e,n){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&o(e,r[a].prototype,n)}}}},function(r,e){function o(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(o.prototype)}o.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=o},function(r,e){r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/assets/application-0252c0b2685b4354bce48031f340d2646bba8b00162aea235d7166e6c5a97daa.css" />
+<link rel="stylesheet" media="screen" href="https://cdn2.hexlet.io/packs/css/41-09f8871c.chunk.css" />
+<script type="82af1b67443a8e45d3850ad7-text/javascript">
+//<![CDATA[
+window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_user={"id":null,"guest":true,"isGuest":true,"admin":false};gon.token="PT6gOs0NJCR9lQ/iHkZxB+W1WMyUcJtfksZrO1M1vrJa3Vi1Mw3dnSbt4BnyqTfxNMzvNGK8bHUPvpvrEEWQSA==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=null;gon.subdomains=["en.hexlet.io","ru.hexlet.io"];
+//]]>
+</script>
+<script type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Puolikkotie 8, 02230 Espoo, Finland","vatID":"VAT ID: FI26641607","telephone":"+44 20 3514 2938","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png"}}
+
+</script>
+
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-1360700-51" async="async" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+<script type="82af1b67443a8e45d3850ad7-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  
+  var config = {
+    'optimize_id': gon.google.optimize_key
+  };
+  
+  if (!gon.current_user.isGuest) {
+    config['user_id'] = gon.current_user.id;
+  }
+  
+  if (gon.social_signin) {
+    config['page_referrer'] = window.location.origin;
+  }
+  
+  gtag('config', gon.google.analytics_key, config);
+</script>
+
+<script type="82af1b67443a8e45d3850ad7-text/javascript">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script type="82af1b67443a8e45d3850ad7-text/javascript">
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    }
+  });
+</script>
+
+<meta content='b9d3902d34' name='verify-admitad'>
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<meta content='article' property='og:type'>
+<meta content='Регулярные выражения - Курсы по программированию' property='og:title'>
+<meta content='https://ru.hexlet.io/courses/regexp' property='og:url'>
+<link href='https://ru.hexlet.io/courses/regexp' rel='canonical'>
+<meta content='https://cdn2.hexlet.io/derivations/image/fill/600/400/eyJpZCI6IjExMjI0N2Y5NzFkNjE3NzZkZDE5OTVkZDQ2NTQwN2ZmLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=5f5adf8859a2b63f9536e0ab257f6043fc6ac9b9e8ac39e26ba373822659a970' property='og:image'>
+<link href='https://cdn2.hexlet.io/derivations/image/fill/600/400/eyJpZCI6IjExMjI0N2Y5NzFkNjE3NzZkZDE5OTVkZDQ2NTQwN2ZmLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=5f5adf8859a2b63f9536e0ab257f6043fc6ac9b9e8ac39e26ba373822659a970' rel='image_src'>
+<meta content='Регулярные выражения: Практически каждый программист сталкивается с регулярными выражениями в повседневной практике. Многих они отпугивают, но регулярные выражения основаны на небольшом количестве простых понятий. Освоив эти понятия, вы сможете всегда чувствовать себя комфортно при работе с этим мощным инструментом.' name='description'>
+<meta content='Регулярные выражения: Практически каждый программист сталкивается с регулярными выражениями в повседневной практике. Многих они отпугивают, но регулярные выражения основаны на небольшом количестве простых понятий. Освоив эти понятия, вы сможете всегда чувствовать себя комфортно при работе с этим мощным инструментом.' property='og:description'>
+<script type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Course","name":"Регулярные выражения","description":"Практически каждый программист сталкивается с регулярными выражениями в повседневной практике. Многих они отпугивают, но регулярные выражения основаны на небольшом количестве простых понятий. Освоив эти понятия, вы сможете всегда чувствовать себя комфортно при работе с этим мощным инструментом.","accessMode":"textOnVisual","commentCount":366,"url":"https://ru.hexlet.io/courses/regexp","image":"https://cdn2.hexlet.io/derivations/image/fill/600/400/eyJpZCI6IjExMjI0N2Y5NzFkNjE3NzZkZDE5OTVkZDQ2NTQwN2ZmLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=5f5adf8859a2b63f9536e0ab257f6043fc6ac9b9e8ac39e26ba373822659a970","isAccessibleForFree":false,"provider":{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Puolikkotie 8, 02230 Espoo, Finland","vatID":"VAT ID: FI26641607","telephone":"+44 20 3514 2938","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png"}},"author":{"@type":"Person","name":"Кирилл Мокевнин","description":"Сооснователь и CEO образовательного проекта Хекслет. Программирую с 2007 года. За это время прошёл путь от разработчика до технического директора и управляющего отдельным подразделением (филиалом). Управлял командами, в которых больше 50 разработчиков. \r\n\r\n- Программирую на языках: Elixir, Clojure, JavaScript, PHP, Ruby. \r\n- Соорганизатор конференции Nastachku.ru. \r\n- Вимер. \r\n- Топлю за DevOps и автоматизированные тесты.\r\n"}}
+
+
+</script>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/pricing"><div class="my-2">Цены</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/blog"><div class="my-2">Блог</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+<div class='text-center py-3'>
+<div class='h2 text-warning'>Основные возможности платформы Hexlet не доступны в вашем браузере.<br>
+Пожалуйста, обновитесь. <a href="https://bestvpn.org/outdatedbrowser/ru">Выбрать браузер</a>.
+</div>
+</div>
+
+
+<main>
+<div class='jumbotron jumbotron-fluid bg-dark'>
+<div class='container-lg'>
+<div class='row'>
+<div class='col-md-8 text-white'>
+<span class='badge badge-light mr-1'>PRO</span>
+<span>курс</span>
+<h1 class='h2 font-weight-normal'>
+Регулярные выражения
+</h1>
+<p class='lead'>
+<span class='mr-4'>
+<a class=" text-white" href="/my/topics?q%5Bcommunitable_of_Lesson_type_course_id_eq%5D=66&amp;q%5Bcommunitable_type_eq%5D=Lesson">366 сообщений в сообществе</a>
+</span>
+<span class='text-nowrap'>
+<span class='lead'>4593</span>
+учащихся
+</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class='container-lg'>
+<div class='row'>
+<div class='col-12 col-md-8 order-1 order-md-0'>
+<p>Практически каждый программист сталкивается с регулярными выражениями в повседневной практике. Многих они отпугивают, но регулярные выражения основаны на небольшом количестве простых понятий. Освоив эти понятия, вы сможете всегда чувствовать себя комфортно при работе с этим мощным инструментом.</p>
+
+<div class='text-muted mb-5'>
+<span>Последнее обновление:</span>
+<span class='d-inline-block'>02 апреля 2020</span>
+</div>
+<h2 class='h3 my-4'>Уроки курса</h2>
+<ul class='list-group'>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>1</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/symbols/theory_unit">Представление символов. Метасимвол.</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с простейшими регулярными выражениями</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/symbols/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>2</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/character_classes/theory_unit">Символьные классы</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться составлять и использовать группы символов</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/character_classes/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>3</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/anchors/theory_unit">Позиция внутри строки</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться задавать границы</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/anchors/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>4</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/alternation/theory_unit">Альтернатива</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться использовать перечисление</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/alternation/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>5</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/quantifiers/theory_unit">Квантификация</a>
+</h3>
+<div class='mt-3 text-muted'>Разобраться как задавать повторения</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/quantifiers/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>6</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/greedy/theory_unit">Жадность</a>
+</h3>
+<div class='mt-3 text-muted'>Перестать жадничать</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/greedy/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>7</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/backreferences/theory_unit">Группировка. Обратная связь</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться переиспользовать группы в регулярных выражениях</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/backreferences/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>8</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/modifiers/theory_unit">Модификаторы</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с управлением через флаги внутри регулярного выражения</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/modifiers/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>тесты</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>9</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/lookaround/theory_unit">Просмотр вперед/назад</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться исключать из групп просматриваемые соответствия</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/lookaround/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>10</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/regexp_conditionals/theory_unit">Поиск по условию</a>
+</h3>
+<div class='mt-3 text-muted'>Научиться ставить условия</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/regexp_conditionals/theory_unit">теория</a>
+</div>
+
+</div>
+</div>
+</li>
+<li class='list-group-item'>
+<div class='row my-2'>
+<div class='col-1 text-center'>
+<div class='h3 font-weight-light'>11</div>
+</div>
+<div class='col'>
+<h3 class='h5'>
+<a class="x-link-only-hover mr-2" href="/courses/regexp/lessons/flags/theory_unit">Флаги</a>
+</h3>
+<div class='mt-3 text-muted'>Познакомиться с основными глобальными флагами</div>
+</div>
+<div class='w-100 d-lg-none'></div>
+<div class='col-1 d-lg-none'></div>
+<div class='col col-lg-auto d-flex flex-lg-column flex-wrap flex-lg-nowrap align-items-lg-end justify-content-lg-center mt-2 mt-lg-0'>
+<div class='small mr-2 mr-lg-0'>
+<a class="x-link-only-hover" href="/courses/regexp/lessons/flags/theory_unit">теория</a>
+</div>
+
+<div class='small mr-2 mr-lg-0'>
+<p class='mb-0' data-placement='top' data-toggle='tooltip' title='Для просмотра тестов и упражнений, необходимо вступить в курс'>упражнение</p>
+</div>
+
+</div>
+</div>
+</li>
+</ul>
+<h2 class='h3 my-4'>Автор</h2>
+<div class='d-flex align-items-start'>
+<img class="img-fluid mr-3 rounded-circle flex-shrink-0" width="80" height="80" alt="Аватар пользователя Kirill Mokevnin" src="https://cdn2.hexlet.io/derivations/image/fill/80/80/eyJpZCI6IjczZDljZGYwYWIyMGVkYmNjMTQzYzNmZGYxNzk1YzMwYzQ2MzI0ZGQxNTVlZTM2MThiODNmMDVmNzFlMSIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=da33959734fb098417e9330c1126ffd48bdf4582a14c168ae6e078e8405b7472" />
+<div>
+<p class='font-weight-bold'><a class="x-link-only-hover" href="/u/mokevnin">Кирилл Мокевнин</a></p>
+<p>Сооснователь и CEO образовательного проекта Хекслет. Программирую с 2007 года. За это время прошёл путь от разработчика до технического директора и управляющего отдельным подразделением (филиалом). Управлял командами, в которых больше 50 разработчиков. </p>
+
+<ul>
+<li>Программирую на языках: Elixir, Clojure, JavaScript, PHP, Ruby. </li>
+<li>Соорганизатор конференции Nastachku.ru. </li>
+<li>Вимер. </li>
+<li>Топлю за DevOps и автоматизированные тесты.</li>
+</ul>
+
+</div>
+</div>
+
+<h2 class='h3 my-4' id='impressions'>
+<a href="/my/topics?q%5Bcommunitable_of_Lesson_type_course_id_eq%5D=66&amp;q%5Bkind_eq%5D=gratitude&amp;q%5Bs%5D%5B%5D=useful+desc&amp;q%5Bs%5D%5B%5D=id+desc">Впечатления</a>
+</h2>
+<div class='card mb-3 border'>
+<div class='card-header text-truncate'>
+Урок:
+<a class="x-link-only-hover" href="/courses/regexp/lessons/flags/theory_unit">Флаги</a>
+</div>
+<div class='card-body'>
+<div class='d-flex align-items-center'>
+<a class="x-link-without-decoration flex-shrink-0 mr-3 rounded-circle" href="/u/malcom"><img class="rounded-circle" width="45" height="45" alt="Аватар пользователя Максим Литвинов" src="https://cdn2.hexlet.io/derivations/image/fill/45/45/eyJpZCI6ImFiNWI2MjQ4NWNhNWRmNDdkOGU0MDI5YzUyMTY5ZmE1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=746f558898ade9dbbbee05e9af8509a5240bbb5b03df6fb7c5d7bcb6d12c6371" />
+</a><div class='d-flex flex-column align-items-start'>
+<a class="x-link-only-hover" href="/u/malcom">Максим Литвинов</a>
+<a class="text-muted x-link-only-hover small" href="https://ru.hexlet.io/topics/30031">22 июля 2019
+</a></div>
+</div>
+<div class='mt-3 hexlet-markdown-body'>
+<p>Спасибо большое за отличный курс! Все разложено по полочкам. После прохождения регулярные выражения уже не кажутся такими непонятными </p>
+
+</div>
+</div>
+</div>
+</div>
+<div class='col-12 col-md-4 order-0 order-md-1 mb-3 mb-md-0'>
+<div class='h-100'>
+<div class='position-sticky pt-2 hexlet-course-sidebar'>
+<div class='card shadow-sm'>
+<div class='d-none d-md-block'>
+<img class="card-img-top" alt="Курс Регулярные выражения" src="https://cdn2.hexlet.io/derivations/image/fill/600/400/eyJpZCI6IjExMjI0N2Y5NzFkNjE3NzZkZDE5OTVkZDQ2NTQwN2ZmLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=5f5adf8859a2b63f9536e0ab257f6043fc6ac9b9e8ac39e26ba373822659a970" />
+</div>
+<div class='card-body'>
+<div class='mb-3'>
+<div class='text-center'>
+продолжительность
+<div class='h3 mt-1'>24 часа</div>
+</div>
+<div class='text-center mt-3'>
+награда
+<div class='h3 mt-1'>52 балла</div>
+</div>
+</div>
+<form id="start_course_form" class="button_to" method="get" action="/u/new"><button class="btn btn-primary btn-block" data-facebook-pixel-id="StartTrial" data-disable-with="<span class=&quot;spinner-border spinner-border-sm&quot; role=&quot;status&quot; aria-hidden=&quot;true&quot;></span><span class=&quot;d-none d-md-inline&quot;>&nbsp;Подождите...</span>
+" type="submit">Получить доступ к курсу
+</button></form></div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4 mt-5'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-md-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a id="VK95731912" target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>Puolikkotie 8, 02230 Espoo, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(499)609-12-31">+7 (499) 609-12-31</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/projects">Проекты по JavaScript, PHP, Node.js, Python, HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-md-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io/?utm_source=hexlet&amp;utm_medium=footer_menu&amp;utm_campaign=link">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="/cdn-cgi/l/email-protection#3e4d4b4e4e514c4a7e565b46525b4a105751">Поддержка</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn2.hexlet.io/assets/application-af77351a6b42df389c3b48e13a5a8ef539b796d10d2f8b013cdba320b326f8fc.js" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime~application-8d2b76ae2d935f174ec1.js" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/2-c5499053569d82bf892b.chunk.js" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/41-0a129c070d6d9bc591a1.chunk.js" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-8fba1ca8b6333cc73d1e.chunk.js" type="82af1b67443a8e45d3850ad7-text/javascript"></script>
+
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="82af1b67443a8e45d3850ad7-|49" defer=""></script></body>
+</html>
