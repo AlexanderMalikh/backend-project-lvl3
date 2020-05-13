@@ -9,13 +9,11 @@ const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filena
 let tempDirName = '';
 
 beforeEach(async () => {
-  await fs.mkdtemp(path.join(os.tmpdir(), 'page-loader-'), (err, folder) => {
-    if (err) throw err;
-    tempDirName = folder;
-  });
+  tempDirName = await fs.mkdtemp(path.join(os.tmpdir(), 'page-loader-'));
 });
 
 test('loader', async () => {
+  console.log(tempDirName);
   const nockData = await fs.readFile(getFixturePath('nock'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
