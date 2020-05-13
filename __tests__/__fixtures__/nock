@@ -1,1 +1,479 @@
-[object Object]
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+<title>Мой прогресс</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="rV15xriqT8tGh1zmqigBCsgMcKoIWFUciz8CM/xGDpJS7KWs5bykEIs+KpuzQF+ZqOkAIhOneLaMiqA2fjWfYQ==" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'>
+<meta charset='utf-8'>
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["Script error"],"payload":{"client":{"source_map_enabled":true,"code_version":"v4234","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(4);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.15.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2);function t(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var a=0;function l(r,e){this.options=r,this._rollbarOldOnError=null;var o=a++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var i=o(3),s=function(r,e){return new l(r,e)},d=function(r){return new i(s,r)};function c(r){return t((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}l.prototype.loadFull=function(r,e,o,n,a){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=t((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,t,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(t=n.args||[],i=0;i<t.length;++i)if("function"==typeof(l=t[i])){l(e);break}}"function"==typeof a&&a(e)}()}})),d.insertBefore(i,s)},l.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),p=0;p<u.length;++p)l.prototype[u[p]]=c(u[p]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var a=new d(e);return t((function(){e.captureUncaught&&(a._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,a,!0),e.wrapGlobalEventHandlers&&n.wrapGlobals(r,a,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,a,!0);var t=e.autoInstrument;return!1!==e.enabled&&(void 0===t||!0===t||"object"==typeof t&&t.network)&&r.addEventListener&&(r.addEventListener("load",a.captureLoad.bind(a)),r.addEventListener("DOMContentLoaded",a.captureDomContentLoaded.bind(a))),r[o]=a,a}))()}},Rollbar:d}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}function t(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}},wrapGlobals:function(r,e,o){if(r){var n,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(n=0;n<l.length;++n)r[a=l[n]]&&r[a].prototype&&t(e,r[a].prototype,o)}}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/assets/application-3236abd06f21bd0044748fd1362aa873079300bdc92d7c364744afc7f4e9beab.css" />
+<link rel="stylesheet" media="screen" href="https://cdn2.hexlet.io/packs/css/41-09f8871c.chunk.css" />
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">
+//<![CDATA[
+window.gon={};gon.hs={"autoloadBeacon":true};gon.applications={};gon.current_user={"id":null,"guest":true,"isGuest":true,"admin":false};gon.token="uTvUgSj9ZdXoJflmcWA78pgoTux/ZeTMwF0SbrJ3WGdGigjrdeuODiWcjxtoCGVh+M0+ZGSayWbH6LBrMATJlA==";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.analytics_events="AnalyticsEvents";gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=null;gon.subdomains=["en.hexlet.io","ru.hexlet.io"];
+//]]>
+</script>
+<script type='application/ld+json'>
+{"@context":"https://schema.org","@type":"Organization","name":"Hexlet","url":"https://hexlet.io","sameAs":["https://www.facebook.com/Hexlet","https://www.youtube.com/user/HexletUniversity","https://twitter.com/HexletHQ","https://soundcloud.com/hexlet"],"legalName":"Hexlet Ltd.","address":"Puolikkotie 8, 02230 Espoo, Finland","vatID":"VAT ID: FI26641607","telephone":"+44 20 3514 2938","logo":{"@type":"ImageObject","url":"https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png"}}
+
+</script>
+
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-1360700-51" async="async" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+  
+  var config = {
+    'optimize_id': gon.google.optimize_key
+  };
+  
+  if (!gon.current_user.isGuest) {
+    config['user_id'] = gon.current_user.id;
+  }
+  
+  if (gon.social_signin) {
+    config['page_referrer'] = window.location.origin;
+  }
+  
+  gtag('config', gon.google.analytics_key, config);
+</script>
+
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script type="9a1d52fbf3bdf4586ecd8cdf-text/javascript">
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    }
+  });
+</script>
+
+<meta content='b9d3902d34' name='verify-admitad'>
+
+
+<link href='https://ru.hexlet.io/my' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Здесь будет виден ваш прогресс обучения от новичка до проектов и стажировки.' name='description'>
+<meta content='Мой прогресс' property='og:title'>
+<meta content='https://ru.hexlet.io/my' property='og:url'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='Здесь будет виден ваш прогресс обучения от новичка до проектов и стажировки.' property='og:description'>
+<meta content='ru' property='og:locale'>
+<meta content='Хекслет' property='og:site_name'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/pricing"><div class="my-2">Цены</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/blog"><div class="my-2">Блог</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+<div class='text-center py-3'>
+<div class='h2 text-warning'>Основные возможности платформы Hexlet не доступны в вашем браузере.<br>
+Пожалуйста, обновитесь. <a href="https://bestvpn.org/outdatedbrowser/ru">Выбрать браузер</a>.
+</div>
+</div>
+
+
+<div class='mb-n5'>
+<div class='row no-gutters'>
+<div class='col-sm-auto border-right hexlet-application-sidebar'>
+<ul class='nav flex-column position-sticky mb-3 sticky-top'>
+<li class='nav-item w-100'>
+<a class="nav-link hexlet-nav-item-hover text-truncate py-3" href="/session/new"><img class="mr-1 rounded-circle" width="30" height="30" alt="Аватар пользователя Гость" src="https://cdn2.hexlet.io/assets/team/you-0d6975dd3165f8174f242a784f3beb84835b60d93e446821299ac562e4cff9c3.jpg" />
+<small class='text-muted'>Гость</small>
+</a><div class='mx-4 border-bottom'></div>
+</li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover font-weight-bold text-primary" href="/my"><div class="x-icon-default-size mr-2"><span class="fal fa-graduation-cap"></span></div><div class="w-100">Обучение</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/topics"><div class="x-icon-default-size mr-2"><span class="fal fa-comments"></span></div><div class="w-100">Вопросы и ответы</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/blog_posts"><div class="x-icon-default-size mr-2"><span class="fal fa-blog"></span></div><div class="w-100">Дневник студента</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/ratings/week"><div class="x-icon-default-size mr-2"><span class="fal fa-trophy-alt"></span></div><div class="w-100">Рейтинг</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/career"><div class="x-icon-default-size mr-2"><span class="fal fa-rocket"></span></div><div class="w-100">Карьера</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/my/bonuses"><div class="x-icon-default-size mr-2"><span class="fal fa-gift"></span></div><div class="w-100">Бонусы</div></a></li>
+<li class="nav-item"><a class="nav-link d-flex px-sm-4 py-sm-3 hexlet-nav-item-hover " href="/companies/new"><div class="x-icon-default-size mr-2"><span class="fal fa-building"></span></div><div class="w-100">Компания</div></a></li>
+</ul>
+</div>
+<div class='col-sm overflow-hidden'>
+<div class='my-4'>
+<div class='container mb-5'>
+<div class='row'>
+<div class='col-md-9 mx-auto'>
+<ul class='nav nav-pills nav-fill'>
+<li class="nav-item"><a class="nav-link px-3 active" href="/my">Сейчас</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/courses">Мои курсы</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/challenges">Мои испытания</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/projects">Проекты</a></li>
+<li class="nav-item"><a class="nav-link px-3 " href="/my/exercises_code_reviews">Ревью кода</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class='container'>
+<div class='mb-5'>
+<h2 class='h4'>С чего начать</h2>
+<p>Начните с профессии и двигайтесь по курсам в правильном порядке, либо воспользуйтесь поиском по курсам.</p>
+<div class='row justify-content-center'>
+<div class='col-md-5 mt-3'>
+<div class='card border-top border-primary border-success shadow-sm x-shadow-fade-in h-100'>
+<div class='card-body'>
+<div class='card-title d-flex'>
+<div class='lead mt-auto'>
+<a class="stretched-link x-link-without-decoration" href="/professions">Выберите профессию</a>
+</div>
+<span class='ml-auto'>
+<i class='fal fa-compass fa-2x text-muted'></i>
+</span>
+</div>
+<div class='card-text'>Сформируйте свой персональный план обучения. Оцените готовность к выполнению проектов.
+</div>
+</div>
+</div>
+</div>
+<div class='col-md-5 mt-3'>
+<div class='card border-top border-success shadow-sm x-shadow-fade-in h-100'>
+<div class='card-body'>
+<div class='card-title d-flex'>
+<div class='lead mt-auto'>
+<a class="stretched-link x-link-without-decoration" href="/courses/introduction_to_programming">Пройдите курс</a>
+</div>
+<span class='ml-auto'>
+<i class='fal fa-chalkboard fa-2x text-muted'></i>
+</span>
+</div>
+<div class='card-text'>Не знаете с чего начать? Попробуйте наш курс &quot;Введение в программирование&quot;. Оцените свой текущий уровень.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='mb-5'>
+<h2 class='h4'>Популярные курсы</h2>
+<div class='row'>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-code fal'></i>
+<div class='ml-auto my-auto'>
+6 часов
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>Операционные системы</h5>
+</div>
+<div class='text-muted mb-2'>Курс посвящен главным принципам, лежащим в основе дизайна опер...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/operating_systems">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-code fal'></i>
+<div class='ml-auto my-auto'>
+3 часа
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>Логика</h5>
+</div>
+<div class='text-muted mb-2'>Введение в математическую логику. Курс основан на первой главе...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/logic">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+<div class='col-lg-4 col-md-6 col-12 mt-3'>
+<div class='card shadow-sm x-shadow-fade-in h-100'>
+<div class='bg-primary card-header d-flex flex-column py-1 text-white'>
+<div class='d-flex'>
+<i class='fa-2x fa-python fab'></i>
+<div class='ml-auto my-auto'>
+7 часов
+</div>
+</div>
+</div>
+<div class='card-body d-flex flex-column'>
+<div class='row flex-wrap-reverse px-3'>
+<h5 class='col-auto col-sm-10 mr-auto p-0'>Python: Настройка окружения</h5>
+</div>
+<div class='text-muted mb-2'>В этом курсе рассматривается понятие языка программирования, о...</div>
+<div class='mt-auto d-flex'>
+<div class='ml-auto'>
+<a class="x-link-without-decoration stretched-link" href="/courses/python-setup-environment">Посмотреть
+</a></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class='mb-5'>
+<h2 class='h4'>Сообщества Хекслета</h2>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-slack fa-2x text-primary'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Слак</h2>
+<p class='text-muted'>Чат студентов Хекслета. Обсуждение программирования, помощь, обучение.</p>
+<div class='mt-auto'><a target="_blank" href="https://slack-ru.hexlet.io/">Присоединиться</a></div>
+</div>
+</div>
+</div>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-vk fa-2x text-success'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Группа Вконтакте</h2>
+<p class='text-muted'>Новости из мира разработки, мероприятия Хекслета, полезные статьи.</p>
+<div class='mt-auto'><a target="_blank" href="https://vk.com/hexlet">Почитать</a></div>
+</div>
+</div>
+</div>
+<div class='col-12 col-lg-4 mt-3'>
+<div class='row h-100'>
+<div class='col-2 text-right'>
+<i class='fab fa-youtube fa-2x text-danger'></i>
+</div>
+<div class='col-10 d-flex flex-column h-100'>
+<h2 class='h5'>Ютуб Канал</h2>
+<p class='text-muted'>Вебинары, обучающие видео, обсуждение насущных вопросов, интервью с известными людьми.</p>
+<div class='mt-auto'><a target="_blank" href="https://www.youtube.com/user/HexletUniversity">Посмотреть</a></div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<footer class='bg-light border-top py-4 mt-5'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a id="VK95731912" target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>Puolikkotie 8, 02230 Espoo, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(499)609-12-31">+7 (499) 609-12-31</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pages/projects">Проекты по JavaScript, PHP, Node.js, Python, HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io?utm_campaign=link&amp;utm_medium=footer_menu&amp;utm_source=hexlet">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="/cdn-cgi/l/email-protection#deadabaeaeb1acaa9eb6bba6b2bbaaf0b7b1">Поддержка</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn2.hexlet.io/assets/application-9a16b41a3c41f54dd8d384c52dec98196e267d4c9dcb91ebc0da6a47232c528a.js" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime~application-8d2b76ae2d935f174ec1.js" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/2-c5499053569d82bf892b.chunk.js" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/41-a08c3262d29a3576c367.chunk.js" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-ae190b2a982ea00c62bd.chunk.js" type="9a1d52fbf3bdf4586ecd8cdf-text/javascript"></script>
+
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="9a1d52fbf3bdf4586ecd8cdf-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"592f1ca5de957a79","version":"2020.3.0","startTime":1589401560126}'></script>
+</body>
+</html>
