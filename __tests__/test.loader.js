@@ -15,6 +15,7 @@ let tempDirName = '';
 beforeEach(async () => {
   tempDirName = await fs.mkdtemp(path.join(os.tmpdir(), 'page-loader-'));
 });
+
 test('http requests is ok', async () => {
   const nockData = await fs.readFile(getFixturePath('nock'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
