@@ -1,3 +1,4 @@
+/* eslint no-unused-expressions: ["error", { "allowTernary": true }] */
 const path = require('path');
 const url = require('url');
 const fs = require('fs').promises;
@@ -16,35 +17,20 @@ const mapp = {
   link: 'link[href]',
 };
 
+const tagsWithResources = ['script', 'img', 'link'];
+
+
 const parseLinks = (pathToHtml) => {
   const linksArr = [];
   return fs.readFile(pathToHtml, 'utf-8')
     .then((data) => {
       const $ = cheerio.load(data);
-
-      const tags = ['script', 'img', 'link'];
-      tags.map((tag) => {
+      tagsWithResources.map((tag) => {
         $(`${mapp[tag]}`).each((i, el) => {
           tag === 'link' ? linksArr.push($(el).attr('href')) : linksArr.push($(el).attr('src'));
         });
         return tag;
       });
-      /*
-      const links = $('link[href]');
-      const scripts = $('script[src]');
-      const imgs = $('img[src]');
-
-      links.each((i, el) => {
-        linksArr.push($(el).attr('href'));
-      });
-
-      scripts.each((i, el) => {
-        linksArr.push($(el).attr('src'));
-      });
-
-      imgs.each((i, el) => {
-        linksArr.push($(el).attr('src'));
-      }); */
       return linksArr;
     })
     .catch((err) => console.log(err));
