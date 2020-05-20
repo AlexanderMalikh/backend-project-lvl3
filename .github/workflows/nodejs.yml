@@ -36,6 +36,6 @@ jobs:
         env:
           CI: true
       - name: Run jest
-        # Run Linter
+        # Run Jest
         run: |
           make test

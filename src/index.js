@@ -8,7 +8,7 @@ const cheerio = require('cheerio');
 const createFilenameByUrl = (webPageUrl) => {
   const parts = webPageUrl.replace(/[^A-Za-zА-Яа-яЁё0-9]/g, '-').split('-').slice(3);
   const filename = parts.reduce((acc, item) => (acc === '' ? `${item}` : `${acc}-${item}`), '');
-  return `${filename}.html`;
+  return filename;
 };
 
 const mapp = {
@@ -20,7 +20,7 @@ const mapp = {
 const tagsWithResources = ['script', 'img', 'link'];
 
 
-const parseLinks = (pathToHtml) => {
+const parseTags = (pathToHtml) => {
   const linksArr = [];
   return fs.readFile(pathToHtml, 'utf-8')
     .then((data) => {
@@ -36,23 +36,37 @@ const parseLinks = (pathToHtml) => {
     .catch((err) => console.log(err));
 };
 
-const transformRelativeLinksToAbsoluteUrls = (links, host) => {
-  const relativeLinks = links.filter((link) => !link.startsWith('https://') && !link.startsWith('//'));
-  console.log('LINKS_______________________________\n', links);
-  console.log('RELATIVE LINKS______________________\n', relativeLinks);
-  const relativeUrls = relativeLinks.map((link) => new URL(link, host));
-  return relativeUrls;
-};
+const parseURL = (links, webPageUrl) => {
+  const parsedURLS = links.filter((link) => new URL(link, webPageUrl).host === webPageUrl.host)
+    .map((link) => new URL(link, webPageUrl).href);
+  console.log('LINKS_______________________________\n', parsedURLS);
 
+  return parsedURLS;
+};
+/*
+const dowloadLocalResources = (resArr, destionation) => {
+  resArr.map((res) => {
+    axios.get(res)
+      .then((response) => {
+        fs.writeFile(destionation, response.data);
+      })
+      .catch((err) => console.log(err));
+    return res;
+  });
+};
+*/
 const load = (webPageUrl, destionationFolder = '/../test') => {
-  const resultingFilePath = path.join(destionationFolder, createFilenameByUrl(webPageUrl));
+  const htmlPath = `${path.join(destionationFolder, createFilenameByUrl(webPageUrl))}.html`;
+  const filesPath = `${path.join(destionationFolder, createFilenameByUrl(webPageUrl))}_files`;
   return axios.get(webPageUrl)
     .then((response) => {
-      fs.writeFile(resultingFilePath, response.data);
+      fs.writeFile(htmlPath, response.data);
+      fs.mkdir(filesPath);
     })
-    .then(() => parseLinks(resultingFilePath))
+    .then(() => parseTags(htmlPath))
     .then((parsedLinks) => {
-      const tmp = transformRelativeLinksToAbsoluteUrls(parsedLinks, new URL(webPageUrl).href);
+      const localLinks = parseURL(parsedLinks, new URL(webPageUrl));
+      // dowloadLocalResources(localLinks, filesPath);
     })
     .catch((error) => console.log(error));
 };
