@@ -19,7 +19,6 @@ const mapp = {
 
 const tagsWithResources = ['script', 'img', 'link'];
 
-
 const parseTags = (pathToHtml) => {
   const linksArr = [];
   return fs.readFile(pathToHtml, 'utf-8')
@@ -48,6 +47,7 @@ const dowloadLocalResources = (resArr, destionation) => {
   resArr.map((res) => {
     axios.get(res)
       .then((response) => {
+
         fs.writeFile(destionation, response.data);
       })
       .catch((err) => console.log(err));
