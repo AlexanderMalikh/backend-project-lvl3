@@ -1,7 +1,6 @@
 #!/usr/bin/env node
-import load from '..';
-
 const program = require('commander');
+const { load } = require('../index');
 
 program
   .version('0.1.0')

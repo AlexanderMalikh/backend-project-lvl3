@@ -2,11 +2,11 @@
  * @jest-environment node
  */
 
-import nock from 'nock';
-import path from 'path';
-import os from 'os';
-import { promises as fs } from 'fs';
-import load from '../src/index';
+const nock = require('nock');
+const path = require('path');
+const os = require('os');
+const fs = require('fs').promises;
+const load = require('../src/index');
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 

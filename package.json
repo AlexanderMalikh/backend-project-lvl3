@@ -4,12 +4,10 @@
   "description": "hexlet backend lvl 3 project",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build",
     "test": "npx -m --experimental-vm-modules jest"
   },
   "bin": {
-    "page-loader": "dist/bin/page-loader.js"
+    "page-loader": "src/bin/page-loader.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +19,7 @@
     "jest",
     "axios",
     "http",
-    "loader"
+    "html parser"
   ],
   "author": "Alexander Malykh",
   "license": "ISC",

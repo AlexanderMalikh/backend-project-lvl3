@@ -1,13 +1,19 @@
-import path from 'path';
-import { promises as fs } from 'fs';
-import axios from 'axios';
-import cheerio from 'cheerio';
-import url from 'url';
+const path = require('path');
+const url = require('url');
+const fs = require('fs').promises;
+const axios = require('axios');
+const cheerio = require('cheerio');
 
 const createFilenameByUrl = (webPageUrl) => {
   const parts = webPageUrl.replace(/[^A-Za-zА-Яа-яЁё0-9]/g, '-').split('-').slice(3);
   const filename = parts.reduce((acc, item) => (acc === '' ? `${item}` : `${acc}-${item}`), '');
   return `${filename}.html`;
+};
+
+const mapp = {
+  script: 'script[src]',
+  img: 'img[src]',
+  link: 'link[href]',
 };
 
 const parseLinks = (pathToHtml) => {
@@ -16,6 +22,14 @@ const parseLinks = (pathToHtml) => {
     .then((data) => {
       const $ = cheerio.load(data);
 
+      const tags = ['script', 'img', 'link'];
+      tags.map((tag) => {
+        $(`${mapp[tag]}`).each((i, el) => {
+          tag === 'link' ? linksArr.push($(el).attr('href')) : linksArr.push($(el).attr('src'));
+        });
+        return tag;
+      });
+      /*
       const links = $('link[href]');
       const scripts = $('script[src]');
       const imgs = $('img[src]');
@@ -30,16 +44,16 @@ const parseLinks = (pathToHtml) => {
 
       imgs.each((i, el) => {
         linksArr.push($(el).attr('src'));
-      });
+      }); */
       return linksArr;
     })
     .catch((err) => console.log(err));
 };
 
-// dlya downloada local resyrsov
 const transformRelativeLinksToAbsoluteUrls = (links, host) => {
   const relativeLinks = links.filter((link) => !link.startsWith('https://') && !link.startsWith('//'));
-  console.log(relativeLinks);
+  console.log('LINKS_______________________________\n', links);
+  console.log('RELATIVE LINKS______________________\n', relativeLinks);
   const relativeUrls = relativeLinks.map((link) => new URL(link, host));
   return relativeUrls;
 };
@@ -52,12 +66,11 @@ const load = (webPageUrl, destionationFolder = '/../test') => {
     })
     .then(() => parseLinks(resultingFilePath))
     .then((parsedLinks) => {
-      // console.log('parsed links\n', parsedLinks);
       const tmp = transformRelativeLinksToAbsoluteUrls(parsedLinks, new URL(webPageUrl).href);
-      console.log(tmp);
     })
     .catch((error) => console.log(error));
 };
 
-
-export default load;
+module.exports = {
+  load,
+};
