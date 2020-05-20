@@ -6,7 +6,7 @@ const nock = require('nock');
 const path = require('path');
 const os = require('os');
 const fs = require('fs').promises;
-const load = require('../src/index');
+const { load } = require('../src/index');
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
