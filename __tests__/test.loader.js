@@ -7,6 +7,7 @@ const path = require('path');
 const os = require('os');
 const fs = require('fs').promises;
 const { load } = require('../src/index');
+const { getLinksAndChangeHtml } = require('../src/utils.js');
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
@@ -17,7 +18,7 @@ beforeEach(async () => {
 });
 
 test('http requests is ok', async () => {
-  const nockData = await fs.readFile(getFixturePath('nock'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('nock.html'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
     .reply(200, nockData);
@@ -26,11 +27,20 @@ test('http requests is ok', async () => {
 });
 
 test('html file created', async () => {
-  const nockData = await fs.readFile(getFixturePath('nock'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('nock.html'), 'utf-8');
   nock('https://ru.hexlet.io')
+    .log(console.log)
     .get('/my')
     .reply(200, nockData);
-  await load('https://ru.hexlet.io/my', tempDirName);
-  const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my.html'));
-  return expect(stat.isFile()).toBe(true);
+  nock('https://ru.hexlet.io')
+    .get('/cdn-cgi')
+    .reply(200, 'asd');
+  return load('https://ru.hexlet.io/my', tempDirName)
+    .then(() => fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my.html')))
+    .then((stat) => expect(stat.isFile()).toBe(true))
+    .catch((err) => console.log(err));
+});
+
+test('transfrom links', async () => {
+  getLinksAndChangeHtml('/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__/simpleHtml.html', '/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__');
 });
