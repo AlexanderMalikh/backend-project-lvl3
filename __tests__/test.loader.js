@@ -18,7 +18,7 @@ beforeEach(async () => {
 });
 
 test('http requests is ok', async () => {
-  const nockData = await fs.readFile(getFixturePath('nock.html'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('simpleHtml.html'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
     .reply(200, nockData);
@@ -27,7 +27,7 @@ test('http requests is ok', async () => {
 });
 
 test('html file created', async () => {
-  const nockData = await fs.readFile(getFixturePath('nock.html'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('simpleHtml.html'), 'utf-8');
   nock('https://ru.hexlet.io')
     .log(console.log)
     .get('/my')
@@ -41,6 +41,8 @@ test('html file created', async () => {
     .catch((err) => console.log(err));
 });
 
+/*
 test('transfrom links', async () => {
-  getLinksAndChangeHtml('/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__/simpleHtml.html', '/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__');
+ getLinksAndChangeHtml('/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__/simpleHtml.html', '/home/alexander/Hexlet Projects/page loader/__tests__/__fixtures__');
 });
+*/
