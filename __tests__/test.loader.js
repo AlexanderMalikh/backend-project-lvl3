@@ -18,7 +18,7 @@ beforeEach(async () => {
 });
 
 test('http requests is ok', async () => {
-  const nockData = await fs.readFile(getFixturePath('simpleHtml.html'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('emptyHtml.html'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
     .reply(200, nockData);
@@ -27,14 +27,14 @@ test('http requests is ok', async () => {
 });
 
 test('html file created', async () => {
-  const nockData = await fs.readFile(getFixturePath('simpleHtml.html'), 'utf-8');
+  const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
+  const testScript = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
   nock('https://ru.hexlet.io')
     .log(console.log)
     .get('/my')
-    .reply(200, nockData);
-  nock('https://ru.hexlet.io')
-    .get('/cdn-cgi')
-    .reply(200, 'asd');
+    .reply(200, nockData)
+    .get('/img/img.svg')
+    .reply(200, testScript);
   return load('https://ru.hexlet.io/my', tempDirName)
     .then(() => fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my.html')))
     .then((stat) => expect(stat.isFile()).toBe(true))

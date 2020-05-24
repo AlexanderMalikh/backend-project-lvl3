@@ -66,7 +66,7 @@ const downloadResources = (destination, linksArr) => {
       fs.writeFile(path.join(destination, getFilename(link)), data.data)
         .catch((err) => console.log(err));
     })
-    .catch((err) => console.log('AHTUNG', err)));
+    .catch((err) => console.log('RESOURCE DOWNLOADING ERROR:', err)));
 };
 
 module.exports = {
