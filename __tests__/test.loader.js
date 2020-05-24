@@ -55,13 +55,13 @@ test('files directory created', async () => {
 
 test('resources are downloaded', async () => {
   const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
-  const testScript = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
+  const testImg = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
   nock('https://ru.hexlet.io')
     .log(console.log)
     .get('/my')
     .reply(200, nockData)
     .get('/img/img.svg')
-    .reply(200, testScript);
+    .reply(200, testImg);
   await load('https://ru.hexlet.io/my', tempDirName);
   const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my_files', 'img-img.svg'));
   expect(stat.isFile()).toBe(true);
