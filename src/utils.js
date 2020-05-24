@@ -56,7 +56,7 @@ const getLinksAndChangeHtml = (htmlPath, resourcesPath) => fs.readFile(htmlPath,
 
 const downloadResources = (destination, linksArr) => {
   fs.mkdir(destination)
-    .catch(() => console.log('directory already exists'));
+    .catch(() => console.log('DIRECTORY ALREADY EXISTS'));
   linksArr.map((link) => axios({
     method: 'get',
     url: link,
