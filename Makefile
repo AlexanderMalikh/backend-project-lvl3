@@ -10,6 +10,6 @@ lint:
 	npx eslint .
 
 test:
-	npm test
+	DEBUG=tests npm test
 
 .PHONY: test

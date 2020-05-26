@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-const debug = require('debug')('page-loader:tests');
+const debug = require('debug')('tests');
 const nock = require('nock');
 const path = require('path');
 const os = require('os');
@@ -18,6 +18,7 @@ beforeEach(async () => {
 });
 
 test('http requests are ok', async () => {
+  debug('cheking if http req working');
   const nockData = await fs.readFile(getFixturePath('emptyHtml.html'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
@@ -27,23 +28,22 @@ test('http requests are ok', async () => {
 });
 
 test('html file created', async () => {
-  const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
-  const testScript = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
+  debug('cheking if html downloaded');
+  const nockData = await fs.readFile(getFixturePath('emptyHtml.html'), 'utf-8');
   nock('https://ru.hexlet.io')
-    .log(console.log)
+    .log(debug)
     .get('/my')
     .reply(200, nockData)
-    .get('/img/img.svg')
-    .reply(200, testScript);
   await load('https://ru.hexlet.io/my', tempDirName);
   const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my.html'));
   expect(stat.isFile()).toBe(true);
 });
 test('files directory created', async () => {
+  debug('cheking if files is created');
   const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
   const testScript = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
   nock('https://ru.hexlet.io')
-    .log(console.log)
+    .log(debug)
     .get('/my')
     .reply(200, nockData)
     .get('/img/img.svg')

@@ -34,9 +34,9 @@ const getFilename = (url) => {
 const getAbsoluteUrl = (links, webPageUrl) => {
   b('parsing local links for absolute urls');
   let parsedURLS = links.filter((link) => isLocal(link));
-  // console.log('LOCAL LINKS\n', parsedURLS);
+  b('LOCAL LINKS\n', parsedURLS);
   parsedURLS = parsedURLS.map((link) => new URL(link, webPageUrl).href);
-  // console.log('URLS\n', parsedURLS);
+  b('URLS\n', parsedURLS);
   return parsedURLS;
 };
 
