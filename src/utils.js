@@ -2,6 +2,9 @@ const axios = require('axios');
 const path = require('path');
 const fs = require('fs').promises;
 const cheerio = require('cheerio');
+const b = require('debug')('page-loader:getAbsoluteUrl');
+const c = require('debug')('page-loader:getLinksAndChangeHTML');
+const d = require('debug')('page-loader:downloadResources');
 
 const tags = {
   script: 'src',
@@ -29,34 +32,39 @@ const getFilename = (url) => {
 };
 
 const getAbsoluteUrl = (links, webPageUrl) => {
+  b('parsing local links for absolute urls');
   let parsedURLS = links.filter((link) => isLocal(link));
-  console.log('LOCAL LINKS\n', parsedURLS);
+  // console.log('LOCAL LINKS\n', parsedURLS);
   parsedURLS = parsedURLS.map((link) => new URL(link, webPageUrl).href);
-  console.log('URLS\n', parsedURLS);
+  // console.log('URLS\n', parsedURLS);
   return parsedURLS;
 };
 
-const getLinksAndChangeHtml = (htmlPath, resourcesPath) => fs.readFile(htmlPath, 'utf-8')
-  .then((data) => {
-    const $ = cheerio.load(data);
-    const linksArr = [];
-    Object.keys(tags).map((tag) => $(tag).each((i, el) => {
-      const link = $(el).attr(tags[tag]);
-      if (link && isLocal(link)) {
-        $(el).attr(`${tags[tag]}`, `${path.join(resourcesPath, getFilename(link))}`);
-        linksArr.push(link);
-      } else if (link) {
-        linksArr.push(link);
-      }
-    }));
-    fs.writeFile(htmlPath, $.html());
-    return linksArr;
-  })
-  .catch((err) => console.log(err));
+const getLinksAndChangeHtml = (htmlPath, resourcesPath) => {
+  c('parsing html for local links and transforming HTML-page');
+  return fs.readFile(htmlPath, 'utf-8')
+    .then((data) => {
+      const $ = cheerio.load(data);
+      const linksArr = [];
+      Object.keys(tags).map((tag) => $(tag).each((i, el) => {
+        const link = $(el).attr(tags[tag]);
+        if (link && isLocal(link)) {
+          $(el).attr(`${tags[tag]}`, `${path.join(resourcesPath, getFilename(link))}`);
+          linksArr.push(link);
+        } else if (link) {
+          linksArr.push(link);
+        }
+      }));
+      fs.writeFile(htmlPath, $.html());
+      return linksArr;
+    })
+    .catch((err) => console.log(err));
+};
 
 const downloadResources = (destination, linksArr) => {
+  d('downloading resources');
   fs.mkdir(destination)
-    .catch(() => console.log('DIRECTORY ALREADY EXISTS'));
+    .catch((err) => d(err));
   linksArr.map((link) => axios({
     method: 'get',
     url: link,
@@ -66,7 +74,7 @@ const downloadResources = (destination, linksArr) => {
       fs.writeFile(path.join(destination, getFilename(link)), data.data)
         .catch((err) => console.log(err));
     })
-    .catch((err) => console.log('RESOURCE DOWNLOADING ERROR:', err)));
+    .catch((err) => d(err)));
 };
 
 module.exports = {

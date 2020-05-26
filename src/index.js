@@ -1,8 +1,24 @@
 const path = require('path');
 const fs = require('fs').promises;
 const axios = require('axios');
+require('axios-debug-log')({
+  request(debug, config) {
+    debug(`Request with ${config.headers['content-type']}`);
+  },
+  response(debug, response) {
+    debug(
+      `Response with ${response.headers['content-type']}`,
+      `from ${response.config.url}`,
+    );
+  },
+  error(debug, error) {
+    debug('Boom', error);
+  },
+});
+
 const {
-  createFilenameByUrl, downloadResources, getAbsoluteUrl, getLinksAndChangeHtml, getFilesDirectoryPath,
+  createFilenameByUrl, downloadResources, getAbsoluteUrl, getLinksAndChangeHtml,
+  getFilesDirectoryPath,
 } = require('./utils');
 
 const load = (url, destinationFolder = '/../test') => {
@@ -15,7 +31,6 @@ const load = (url, destinationFolder = '/../test') => {
     .then((links) => downloadResources(resourcesPath, links))
     .catch((err) => console.log(err));
 };
-
 module.exports = {
   load,
 };
