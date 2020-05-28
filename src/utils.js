@@ -2,9 +2,8 @@ const axios = require('axios');
 const path = require('path');
 const fs = require('fs').promises;
 const cheerio = require('cheerio');
-const b = require('debug')('page-loader:getAbsoluteUrl');
-const c = require('debug')('page-loader:getLinksAndChangeHTML');
-const d = require('debug')('page-loader:downloadResources');
+const debug = require('debug')('page-loader:utils');
+
 
 const tags = {
   script: 'src',
@@ -32,16 +31,16 @@ const getFilename = (url) => {
 };
 
 const getAbsoluteUrl = (links, webPageUrl) => {
-  b('parsing local links for absolute urls');
-  let parsedURLS = links.filter((link) => isLocal(link));
-  b('LOCAL LINKS\n', parsedURLS);
-  parsedURLS = parsedURLS.map((link) => new URL(link, webPageUrl).href);
-  b('URLS\n', parsedURLS);
+  debug('parsing local links for absolute urls');
+  const localLinks = links.filter((link) => isLocal(link));
+  debug('LOCAL LINKS\n', localLinks);
+  const parsedURLS = localLinks.map((link) => new URL(link, webPageUrl).href);
+  debug('ABSOLUTE URLS\n', parsedURLS);
   return parsedURLS;
 };
 
 const getLinksAndChangeHtml = (htmlPath, resourcesPath) => {
-  c('parsing html for local links and transforming HTML-page');
+  debug('parsing html for local links and transforming HTML-page');
   return fs.readFile(htmlPath, 'utf-8')
     .then((data) => {
       const $ = cheerio.load(data);
@@ -57,14 +56,25 @@ const getLinksAndChangeHtml = (htmlPath, resourcesPath) => {
       }));
       fs.writeFile(htmlPath, $.html());
       return linksArr;
-    })
-    .catch((err) => console.log(err));
+    });
 };
 
+const downloadHtml = (url, destination) => axios.get(url)
+  .catch((error) => {
+    if (error.response) {
+      throw new Error(`${url} Request failed with status code ${error.response.status}`);
+    } else {
+      throw new Error(`${url} Request was made but no response was recieved`);
+    }
+  })
+  .then((response) => fs.writeFile(destination, response.data, 'utf-8'));
+
 const downloadResources = (destination, linksArr) => {
-  d('downloading resources');
+  debug('downloading resources');
   fs.mkdir(destination)
-    .catch((err) => d(err));
+    .catch((err) => {
+      console.error(err.message);
+    });
   linksArr.map((link) => axios({
     method: 'get',
     url: link,
@@ -72,9 +82,8 @@ const downloadResources = (destination, linksArr) => {
   })
     .then((data) => {
       fs.writeFile(path.join(destination, getFilename(link)), data.data)
-        .catch((err) => console.log(err));
-    })
-    .catch((err) => d(err)));
+        .catch((err) => console.error(err.message));
+    }));
 };
 
 module.exports = {
@@ -84,4 +93,5 @@ module.exports = {
   getAbsoluteUrl,
   getFilename,
   getLinksAndChangeHtml,
+  downloadHtml,
 };

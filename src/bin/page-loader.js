@@ -8,6 +8,10 @@ program
   .description('web pages downloader')
   .option('-o, --output [type]', 'destination', '/tmp')
   .action((url) => {
-    load(url, program.output);
+    load(url, program.output)
+      .catch((err) => {
+        console.error(err.message);
+        process.exit(1);
+      });
   });
 program.parse(process.argv);
