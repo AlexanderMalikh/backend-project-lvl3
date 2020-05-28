@@ -47,7 +47,7 @@ test('Resources directory created', async () => {
     .log(debug)
     .get('/my')
     .reply(200, nockData)
-    .get('/img/img.svg')
+    .get('/img.svg')
     .reply(200, testScript);
   await load('https://ru.hexlet.io/my', tempDirName);
   const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my_files'));
@@ -61,10 +61,10 @@ test('resources are downloaded', async () => {
     .log(console.log)
     .get('/my')
     .reply(200, nockData)
-    .get('/img/img.svg')
+    .get('/img.svg')
     .reply(200, testImg);
   await load('https://ru.hexlet.io/my', tempDirName);
-  const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my_files', 'img-img.svg'));
+  const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my_files', 'img.svg'));
   expect(stat.isFile()).toBe(true);
 });
 

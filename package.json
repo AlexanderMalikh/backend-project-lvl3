@@ -7,7 +7,7 @@
     "test": "npx -m --experimental-vm-modules jest"
   },
   "bin": {
-    "page-loader": "src/bin/page-loader.js"
+    "pageloader": "src/bin/page-loader.js"
   },
   "repository": {
     "type": "git",
@@ -36,11 +36,12 @@
     "nock": "^12.0.3"
   },
   "dependencies": {
-    "debug": "^4.1.1",
     "axios": "^0.19.2",
     "axios-debug-log": "^0.7.0",
     "cheerio": "^1.0.0-rc.3",
     "commander": "^5.0.0",
-    "commander-js": "0.0.1-security"
+    "commander-js": "0.0.1-security",
+    "debug": "^4.1.1",
+    "listr": "^0.14.3"
   }
 }
