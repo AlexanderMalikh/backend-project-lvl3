@@ -1,7 +1,10 @@
 #Makefile
 
 install:
-	sudo npm link
+	install-deps
+
+install-deps:
+	npm ci
 
 publish:
 	npm publish --dry-run

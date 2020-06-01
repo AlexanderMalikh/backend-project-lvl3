@@ -42,6 +42,7 @@
     "commander": "^5.0.0",
     "commander-js": "0.0.1-security",
     "debug": "^4.1.1",
-    "listr": "^0.14.3"
+    "listr": "^0.14.3",
+    "promise.allsettled": "^1.0.2"
   }
 }
