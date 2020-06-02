@@ -1,6 +1,3 @@
-/**
- * @jest-environment node
- */
 const debug = require('debug')('tests');
 const nock = require('nock');
 const path = require('path');

@@ -9,6 +9,10 @@
   "bin": {
     "pageloader": "src/bin/page-loader.js"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlexanderMalikh/backend-project-lvl3.git"
