@@ -1,4 +1,5 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/333d4976327f1b8d643f/maintainability)](https://codeclimate.com/github/AlexanderMalikh/backend-project-lvl3/maintainability)![Node CI](https://github.com/AlexanderMalikh/backend-project-lvl3/workflows/Node%20CI/badge.svg)
+
 **Simple HTML page downloading CLI-app**
 ###  How to install
 
