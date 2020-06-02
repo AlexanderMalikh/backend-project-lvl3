@@ -5,7 +5,6 @@
 
 ```
        $ git clone https://github.com/AlexanderMalikh/backend-project-lvl3.git
-       $ make publish
-       $ make install
+       $ npm install
 ```
 [![asciicast](https://asciinema.org/a/335913.svg)](https://asciinema.org/a/335913)[![asciicast](https://asciinema.org/a/335916.svg)](https://asciinema.org/a/335916)[![asciicast](https://asciinema.org/a/uT8XGeF7S3SDMpZoJpJhAJRAh.svg)](https://asciinema.org/a/uT8XGeF7S3SDMpZoJpJhAJRAh)
