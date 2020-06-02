@@ -39,3 +39,7 @@ jobs:
         # Run Jest
         run: |
           make test
+      - name: Run ESLint
+        # Run ESLint
+        run: |
+          make lint

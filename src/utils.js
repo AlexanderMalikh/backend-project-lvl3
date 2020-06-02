@@ -26,7 +26,7 @@ const getFilesDirectoryPath = (url) => `${createFilenameByUrl(url)}_files`;
 
 const getFilename = (url) => {
   const { pathname } = new URL(url, 'https://example.com');
-  const filename = pathname.split('/').filter((symb) => symb !== '').join('-');
+  const filename = pathname.split('/').filter((el) => el !== '').join('-');
   return filename === '' ? 'main.html' : filename;
 };
 
