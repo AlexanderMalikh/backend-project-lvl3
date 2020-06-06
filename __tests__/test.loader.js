@@ -1,9 +1,14 @@
-const debug = require('debug')('tests');
-const nock = require('nock');
-const path = require('path');
-const os = require('os');
-const fs = require('fs').promises;
-const { load } = require('../src/index');
+import debug from 'debug';
+import nock from 'nock';
+import path from 'path';
+import os from 'os';
+import { promises as fs } from 'fs';
+import load from '../src';
+import { fileURLToPath } from 'url';
+
+/* eslint-disable */
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+/* eslint-enable */
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
@@ -14,8 +19,6 @@ beforeEach(async () => {
 });
 
 test('Should load HTML-page with resources', async () => {
-  debug('cheking if HTML is loaded with resources');
-
   const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
   const img = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
   const scope = nock('https://ru.hexlet.io')
@@ -36,12 +39,11 @@ test('Should load HTML-page with resources', async () => {
 });
 
 test('Should generate 404 error', async () => {
-  debug('cheking errors');
   nock('https://abc.xyz')
     .log(debug)
     .get('/a')
     .reply(404);
-  await expect(load('https://abc.xyz/a', tempDirName)).rejects.toThrow('https://abc.xyz/a Request failed with status code 404');
+  await expect(load('https://abc.xyz/a', tempDirName)).rejects.toThrow('Request failed with status code 404');
 });
 
 test('Should generate ENOENT error', async () => {
@@ -54,7 +56,6 @@ test('Should generate ENOENT error', async () => {
 
 /*
 test('HTTP requests are ok', async () => {
-  debug('cheking if http req working');
   const scope = nock('https://ru.hexlet.io')
     .get('/my')
     .reply(200, '<html></html>');
@@ -62,7 +63,6 @@ test('HTTP requests are ok', async () => {
 });
 
 test('HTML file created', async () => {
-  debug('cheking if html downloaded');
   nock('https://ru.hexlet.io')
     .log(debug)
     .get('/my')

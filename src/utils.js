@@ -1,15 +1,17 @@
-const axios = require('axios');
-const path = require('path');
-const fs = require('fs').promises;
-const cheerio = require('cheerio');
-const debug = require('debug')('page-loader:utils');
-const Listr = require('listr');
+import axios from 'axios';
+import path from 'path';
+import { promises as fs } from 'fs';
+import cheerio from 'cheerio';
+import debug from 'debug';
+import Listr from 'listr';
 
 const tags = {
   script: 'src',
   img: 'src',
   link: 'href',
 };
+
+const log = debug('page-loader:utils');
 
 const createFilenameByUrl = (url, ext = '') => {
   const parts = url.replace('https://', '')
@@ -31,17 +33,10 @@ const getFilename = (url) => {
 };
 
 const downloadHtml = (url, destination) => axios.get(url)
-  .catch((error) => {
-    if (error.response) {
-      throw new Error(`${url} Request failed with status code ${error.response.status}`);
-    } else {
-      throw new Error(`${url} Request was made but no response was recieved`);
-    }
-  })
   .then((response) => fs.writeFile(destination, response.data, 'utf-8'));
 
 const getLinksAndChangeHtml = (htmlPath, resourcesPath) => {
-  debug('parsing html for local links and transforming HTML-page');
+  log('parsing html for local links and transforming HTML-page');
   const linksArr = [];
   return fs.readFile(htmlPath, 'utf-8')
     .then((data) => {
@@ -64,18 +59,15 @@ const getLinksAndChangeHtml = (htmlPath, resourcesPath) => {
 };
 
 const getAbsoluteUrl = (links, webPageUrl) => {
-  debug('parsing local links for absolute urls');
+  log('parsing local links for absolute urls');
   const localLinks = links.filter((link) => isLocal(link));
   const parsedURLS = localLinks.map((link) => new URL(link, webPageUrl).href);
   return parsedURLS;
 };
 
 const downloadResources = (destination, linksArr) => {
-  debug('downloading resources');
-  fs.mkdir(destination)
-    .catch((err) => {
-      console.error(err.message);
-    });
+  log('downloading resources');
+  fs.mkdir(destination);
   const dowloadPromise = (link) => {
     axios({
       method: 'get',
@@ -95,7 +87,7 @@ const downloadResources = (destination, linksArr) => {
   Promise.allSettled(linksArr.map((link) => dowloadPromise(link)));
 };
 
-module.exports = {
+export {
   createFilenameByUrl,
   downloadResources,
   getFilesDirectoryPath,
