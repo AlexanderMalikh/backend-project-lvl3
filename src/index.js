@@ -32,10 +32,9 @@ const log = debug('page-loader:utils');
 
 const createFilenameByUrl = (url) => {
   const parts = url.replace('https://', '')
-    .replace(/[^A-Za-zА-Яа-яЁё0-9]/g, '-')
-    .split('-');
-  const filename = parts.reduce((acc, item) => (acc === '' ? `${item}` : `${acc}-${item}`), '');
-  return filename;
+    .replace(/[^A-Za-zА-Яа-яЁё0-9]{1}$/g, '')
+    .replace(/[^A-Za-zА-Яа-яЁё0-9]/g, '-');
+  return parts;
 };
 
 const isLocal = (url) => new URL(url, 'https://example.com').origin === 'https://example.com';
