@@ -95,7 +95,7 @@ const downloadResources = (linksArr) => {
   }]).run();
 };
 
-export default (url, destinationFolder = './') => {
+export default (url, destinationFolder) => {
   htmlPath = `${path.join(destinationFolder, createFilenameByUrl(url))}.html`;
   resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
   return downloadHtml(url)
