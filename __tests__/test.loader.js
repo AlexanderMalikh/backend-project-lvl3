@@ -4,11 +4,7 @@ import path from 'path';
 import os from 'os';
 import { promises as fs } from 'fs';
 import load from '../src';
-import { fileURLToPath } from 'url';
-
-/* eslint-disable */
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-/* eslint-enable */
+import { __dirname } from '../src/utils.js';
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
@@ -53,36 +49,3 @@ test('Should generate ENOENT error', async () => {
     .reply(200, '<html></html');
   await expect(load('https://example.com/a', path.join(tempDirName, 'any'))).rejects.toThrow('ENOENT');
 });
-
-/*
-test('HTTP requests are ok', async () => {
-  const scope = nock('https://ru.hexlet.io')
-    .get('/my')
-    .reply(200, '<html></html>');
-  await load('https://ru.hexlet.io/my', tempDirName);
-});
-
-test('HTML file created', async () => {
-  nock('https://ru.hexlet.io')
-    .log(debug)
-    .get('/my')
-    .reply(200, '<html></html>');
-  await load('https://ru.hexlet.io/my', tempDirName);
-  const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my.html'));
-  expect(stat.isFile()).toBe(true);
-});
-
-test('resources are downloaded', async () => {
-  const nockData = await fs.readFile(getFixturePath('htmlWithRes.html'), 'utf-8');
-  const testImg = await fs.readFile(getFixturePath('img.svg'), 'utf-8');
-  nock('https://ru.hexlet.io')
-    .log(console.log)
-    .get('/my')
-    .reply(200, nockData)
-    .get('/img.svg')
-    .reply(200, testImg);
-  await load('https://ru.hexlet.io/my', tempDirName);
-  const stat = await fs.lstat(path.join(tempDirName, 'ru-hexlet-io-my_files', 'img.svg'));
-  expect(stat.isFile()).toBe(true);
-});
-*/

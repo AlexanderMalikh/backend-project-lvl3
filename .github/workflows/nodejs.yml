@@ -39,7 +39,7 @@ jobs:
         # Run Jest
         uses: paambaati/codeclimate-action@v2.6.0
         env:
-          CC_TEST_REPORTER_ID: 9c0168b806ecfeac617e271ca33095257c1ef2338cc4246e6ea58dca40b7cf64
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test-coverage
           debug: true

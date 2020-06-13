@@ -18,10 +18,6 @@ axiosDebug({
   },
 });
 
-let htmlPath = '';
-let resourcesPath = '';
-const links = [];
-
 const tags = {
   script: 'src',
   img: 'src',
@@ -47,18 +43,19 @@ const getFilename = (url) => {
   return filename === '' ? 'main.html' : filename;
 };
 
-const downloadHtml = (url) => axios.get(url)
+const downloadHtml = (url, htmlPath) => axios.get(url)
   .then((response) => fs.writeFile(htmlPath, response.data, 'utf-8'));
 
-const getLinksAndChangeHtml = () => {
+const getLinksAndChangeHtml = (htmlPath, host) => {
   log('parsing html for local links and transforming HTML-page');
+  const links = [];
   return fs.readFile(htmlPath, 'utf-8')
     .then((data) => {
       const $ = cheerio.load(data);
       Object.keys(tags).map((tag) => $(tag).each((i, el) => {
         const link = $(el).attr(tags[tag]);
         if (link && isLocal(link)) {
-          $(el).attr(`${tags[tag]}`, `${path.join(resourcesPath, getFilename(link))}`);
+          $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(host), getFilename(link))}`);
           links.push(link);
         }
       }));
@@ -66,15 +63,16 @@ const getLinksAndChangeHtml = () => {
     })
     .then(($) => {
       fs.writeFile(htmlPath, $.html());
+      return links;
     });
 };
 
-const getAbsoluteUrls = (webPageUrl) => {
+const getAbsoluteUrls = (links, url) => {
   log('parsing local links for absolute urls');
-  return links.map((link) => new URL(link, webPageUrl).href);
+  return links.map((link) => new URL(link, url).href);
 };
 
-const downloadResources = (linksArr) => {
+const downloadResources = (linksArr, resourcesPath) => {
   log('downloading resources');
   fs.mkdir(resourcesPath);
   new Listr([{
@@ -96,10 +94,10 @@ const downloadResources = (linksArr) => {
 };
 
 export default (url, destinationFolder) => {
-  htmlPath = `${path.join(destinationFolder, createFilenameByUrl(url))}.html`;
-  resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
-  return downloadHtml(url)
-    .then(() => getLinksAndChangeHtml())
-    .then(() => getAbsoluteUrls(new URL(url)))
-    .then((urls) => downloadResources(urls));
+  const htmlPath = `${path.join(destinationFolder, createFilenameByUrl(url))}.html`;
+  const resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
+  return downloadHtml(url, htmlPath)
+    .then(() => getLinksAndChangeHtml(htmlPath, url))
+    .then((links) => getAbsoluteUrls(links, new URL(url)))
+    .then((urls) => downloadResources(urls, resourcesPath));
 };

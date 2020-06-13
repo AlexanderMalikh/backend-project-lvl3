@@ -7,7 +7,7 @@ program
   .version('0.1.0')
   .arguments('<url>')
   .description('web pages downloader')
-  .option('-o, --output [type]', 'destination', './')
+  .option('-o, --output [type]', 'destination', process.cwd())
   .action((url) => {
     load(url, program.output)
       .catch((err) => {
