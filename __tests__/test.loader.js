@@ -4,7 +4,9 @@ import path from 'path';
 import os from 'os';
 import { promises as fs } from 'fs';
 import load from '../src';
-import { __dirname } from '../src/utils.js';
+import { fileURLToPath } from 'url';
+
+export const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const getFixturePath = (filename) => path.join(__dirname, '__fixtures__', filename);
 
