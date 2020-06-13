@@ -87,7 +87,7 @@ const downloadResources = (linksArr, resourcesPath) => {
             responseType: 'arraybuffer',
           })
             .then((data) => fs.writeFile(path.join(resourcesPath, getFilename(link)), data.data)),
-        }], { concurrent: true }).run();
+        }], { concurrent: true, exitOnError: false }).run();
       });
     },
   }]).run();
