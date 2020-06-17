@@ -28,8 +28,8 @@ const log = debug('page-loader:utils');
 
 const createFilenameByUrl = (url) => {
   const parts = url.replace('https://', '')
-    .replace(/[^A-Za-zА-Яа-яЁё0-9]{1}$/g, '')
-    .replace(/[^A-Za-zА-Яа-яЁё0-9]/g, '-');
+    .replace(/[\W]{1}$/g, '')
+    .replace(/[\W]/g, '-');
   return parts;
 };
 
@@ -40,31 +40,26 @@ const getFilesDirectoryPath = (url) => `${createFilenameByUrl(url)}_files`;
 const getFilename = (url) => {
   const { pathname } = new URL(url, 'https://example.com');
   const filename = pathname.split('/').filter((el) => el !== '').join('-');
-  return filename === '' ? 'main.html' : filename;
+  return filename === '' ? 'index.html' : filename;
 };
 
 const downloadHtml = (url, htmlPath) => axios.get(url)
   .then((response) => fs.writeFile(htmlPath, response.data, 'utf-8'));
 
-const getLinksAndChangeHtml = (htmlPath, host) => {
+const getHtml = (htmlPath) => fs.readFile(htmlPath, 'utf-8');
+
+const getLinksAndChangeHtml = (html, url, htmlPath) => {
   log('parsing html for local links and transforming HTML-page');
   const links = [];
-  return fs.readFile(htmlPath, 'utf-8')
-    .then((data) => {
-      const $ = cheerio.load(data);
-      Object.keys(tags).map((tag) => $(tag).each((i, el) => {
-        const link = $(el).attr(tags[tag]);
-        if (link && isLocal(link)) {
-          $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(host), getFilename(link))}`);
-          links.push(link);
-        }
-      }));
-      return $;
-    })
-    .then(($) => {
-      fs.writeFile(htmlPath, $.html());
-      return links;
-    });
+  const $ = cheerio.load(html);
+  Object.keys(tags).map((tag) => $(tag).each((i, el) => {
+    const link = $(el).attr(tags[tag]);
+    if (link && isLocal(link)) {
+      $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(url), getFilename(link))}`);
+      links.push(link);
+    }
+  }));
+  return fs.writeFile(htmlPath, $.html()).then(() => links);
 };
 
 const getAbsoluteUrls = (links, url) => {
@@ -74,30 +69,27 @@ const getAbsoluteUrls = (links, url) => {
 
 const downloadResources = (linksArr, resourcesPath) => {
   log('downloading resources');
-  fs.mkdir(resourcesPath);
-  new Listr([{
-    title: 'Downloading resources: ',
-    task: () => {
-      linksArr.forEach((link) => {
-        new Listr([{
-          title: `${link}`,
-          task: () => axios({
-            method: 'get',
-            url: link,
-            responseType: 'arraybuffer',
-          })
-            .then((data) => fs.writeFile(path.join(resourcesPath, getFilename(link)), data.data)),
-        }], { concurrent: true, exitOnError: false }).run();
-      });
-    },
-  }]).run();
+  return fs.mkdir(resourcesPath).then(() => {
+    linksArr.forEach((link) => {
+      new Listr([{
+        title: `Downloading ${link}`,
+        task: () => axios({
+          method: 'get',
+          url: link,
+          responseType: 'arraybuffer',
+        })
+          .then((data) => fs.writeFile(path.join(resourcesPath, getFilename(link)), data.data)),
+      }], { concurrent: true, exitOnError: false }).run();
+    });
+  });
 };
 
 export default (url, destinationFolder) => {
   const htmlPath = `${path.join(destinationFolder, createFilenameByUrl(url))}.html`;
   const resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
   return downloadHtml(url, htmlPath)
-    .then(() => getLinksAndChangeHtml(htmlPath, url))
+    .then(() => getHtml(htmlPath))
+    .then((html) => getLinksAndChangeHtml(html, url, htmlPath))
     .then((links) => getAbsoluteUrls(links, new URL(url)))
     .then((urls) => downloadResources(urls, resourcesPath));
 };
