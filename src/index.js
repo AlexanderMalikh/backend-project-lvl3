@@ -51,7 +51,32 @@ const downloadHtml = (url, htmlPath) => axios.get(url)
 
 const getHtml = (htmlPath) => fs.readFile(htmlPath, 'utf-8');
 
-const getLinksAndChangeHtml = (html, url, htmlPath) => {
+const transformLinksInHtml = (html, htmlPath, url) => {
+  log('transforming paths of links');
+  const $ = cheerio.load(html);
+  Object.keys(tags).map((tag) => $(tag).each((i, el) => {
+    const link = $(el).attr(tags[tag]);
+    if (link && isLocal(link, url)) {
+      $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(url), getFilename(link))}`);
+    }
+  }));
+  return fs.writeFile(htmlPath, $.html());
+};
+
+const getLocalLinks = (html, url) => {
+  log('parsing html for local links');
+  const links = [];
+  const $ = cheerio.load(html);
+  Object.keys(tags).map((tag) => $(tag).each((i, el) => {
+    const link = $(el).attr(tags[tag]);
+    if (link && isLocal(link, url)) {
+      links.push(link);
+    }
+  }));
+  return links;
+};
+/*
+const getLinksAndChangeHtml = (html, htmlPath, url) => {
   log('parsing html for local links and transforming HTML-page');
   const links = [];
   const $ = cheerio.load(html);
@@ -64,7 +89,7 @@ const getLinksAndChangeHtml = (html, url, htmlPath) => {
   }));
   return fs.writeFile(htmlPath, $.html()).then(() => links);
 };
-
+*/
 const getAbsoluteUrls = (links, url) => {
   log('parsing local links for absolute urls');
   return links.map((link) => new URL(link, url).href);
@@ -92,7 +117,7 @@ export default (url, destinationFolder) => {
   const resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
   return downloadHtml(url, htmlPath)
     .then(() => getHtml(htmlPath))
-    .then((html) => getLinksAndChangeHtml(html, url, htmlPath))
-    .then((links) => getAbsoluteUrls(links, new URL(url)))
+    .then((html) => transformLinksInHtml(html, htmlPath, url).then(() => getLocalLinks(html, url)))
+    .then((links) => getAbsoluteUrls(links, url))
     .then((urls) => downloadResources(urls, resourcesPath));
 };
