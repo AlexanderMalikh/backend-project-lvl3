@@ -33,7 +33,10 @@ const createFilenameByUrl = (url) => {
   return parts;
 };
 
-const isLocal = (url) => new URL(url, 'https://example.com').origin === 'https://example.com';
+const isLocal = (link, url) => {
+  const originalHost = new URL(url).origin;
+  return new URL(link, originalHost).origin === originalHost;
+};
 
 const getFilesDirectoryPath = (url) => `${createFilenameByUrl(url)}_files`;
 
@@ -54,7 +57,7 @@ const getLinksAndChangeHtml = (html, url, htmlPath) => {
   const $ = cheerio.load(html);
   Object.keys(tags).map((tag) => $(tag).each((i, el) => {
     const link = $(el).attr(tags[tag]);
-    if (link && isLocal(link)) {
+    if (link && isLocal(link, url)) {
       $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(url), getFilename(link))}`);
       links.push(link);
     }
@@ -67,10 +70,10 @@ const getAbsoluteUrls = (links, url) => {
   return links.map((link) => new URL(link, url).href);
 };
 
-const downloadResources = (linksArr, resourcesPath) => {
+const downloadResources = (links, resourcesPath) => {
   log('downloading resources');
   return fs.mkdir(resourcesPath).then(() => {
-    linksArr.forEach((link) => {
+    links.forEach((link) => {
       new Listr([{
         title: `Downloading ${link}`,
         task: () => axios({
