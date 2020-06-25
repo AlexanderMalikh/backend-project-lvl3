@@ -49,32 +49,7 @@ const getFilename = (url) => {
 const downloadHtml = (url, htmlPath) => axios.get(url)
   .then((response) => fs.writeFile(htmlPath, response.data, 'utf-8'));
 
-const transformLinksInHtml = (html, url) => {
-  log('transforming paths of links');
-  const $ = cheerio.load(html);
-  Object.keys(tags).map((tag) => $(tag).each((i, el) => {
-    const link = $(el).attr(tags[tag]);
-    if (link && isLocal(link, url)) {
-      $(el).attr(`${tags[tag]}`, `${path.join(getFilesDirectoryPath(url), getFilename(link))}`);
-    }
-  }));
-  return $.html();
-};
-
-const getLocalLinks = (html, url) => {
-  log('parsing html for local links');
-  const links = [];
-  const $ = cheerio.load(html);
-  Object.keys(tags).map((tag) => $(tag).each((i, el) => {
-    const link = $(el).attr(tags[tag]);
-    if (link && isLocal(link, url)) {
-      links.push(link);
-    }
-  }));
-  return links;
-};
-/*
-const getLinksAndChangeHtml = (html, htmlPath, url) => {
+const getLinksAndChangeHtml = (html, url) => {
   log('parsing html for local links and transforming HTML-page');
   const links = [];
   const $ = cheerio.load(html);
@@ -85,9 +60,9 @@ const getLinksAndChangeHtml = (html, htmlPath, url) => {
       links.push(link);
     }
   }));
-  return fs.writeFile(htmlPath, $.html()).then(() => links);
+  return { links, newHtml: $.html() };
 };
-*/
+
 const getAbsoluteUrls = (links, url) => {
   log('parsing local links for absolute urls');
   return links.map((link) => new URL(link, url).href);
@@ -115,14 +90,8 @@ export default (url, destinationFolder) => {
   const resourcesPath = path.join(destinationFolder, getFilesDirectoryPath(url));
   return downloadHtml(url, htmlPath)
     .then(() => fs.readFile(htmlPath, 'utf-8'))
-    .then((html) => {
-      const links = getLocalLinks(html, url);
-      const newHtml = transformLinksInHtml(html, url);
-      return fs.writeFile(htmlPath, newHtml).then(() => links);
-    })
-    /* transformLinksInHtml(html, url)
-      .then((newHtml) => fs.writeFile(htmlPath, newHtml))
-      .then(() => getLocalLinks(html, url))) */
+    .then((html) => getLinksAndChangeHtml(html, url))
+    .then(({ links, newHtml }) => fs.writeFile(htmlPath, newHtml).then(() => links))
     .then((links) => getAbsoluteUrls(links, url))
     .then((urls) => downloadResources(urls, resourcesPath));
 };
